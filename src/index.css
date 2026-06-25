@@ -23,8 +23,8 @@
   --section-bg-hero-left: var(--color-navy);
   --section-bg-hero-right: var(--color-primary);
   --section-bg-about: var(--color-light);
-  --section-bg-experience: var(--color-blue);
-  --section-bg-skills: var(--color-light-soft);
+  --section-bg-experience: var(--color-navy);
+  --section-bg-skills: var(--color-light-navy);
   --section-bg-projects: var(--color-navy);
   --section-bg-contact: var(--color-black);
 
@@ -58,7 +58,7 @@ html {
 body {
   margin: 0;
   font-family: Inter, system-ui, sans-serif;
-  background: var(--color-dark);
+  background: var(--color-black);
   color: var(--color-light);
 }
 
