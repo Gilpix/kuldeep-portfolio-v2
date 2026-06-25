@@ -22,7 +22,7 @@ function SectionWrapper({
   return (
     <section
       id={id}
-      className={`section-padding relative overflow-hidden px-4 sm:px-6 lg:px-12 ${className}`}
+      className={`section-padding relative px-4 sm:px-6 lg:px-12 ${className}`}
     >
       <div className={`section-container relative ${containerClassName}`}>
         {children}
