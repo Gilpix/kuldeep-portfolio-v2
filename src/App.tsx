@@ -4,6 +4,7 @@
  * full UI code directly inside the root component.
  */
 
+import ThemeToggle from "./components/common/ThemeToggle";
 import Navbar from "./components/layout/Navbar";
 import About from "./sections/About";
 import Experience from "./sections/Experience";
@@ -12,7 +13,8 @@ import Skills from "./sections/Skills";
 
 function App() {
   return (
-    <main className="min-h-screen bg-[var(--color-black)] text-white">
+    <main className="min-h-screen">
+      <ThemeToggle />
       <Navbar />
       <Hero />
       <About />
