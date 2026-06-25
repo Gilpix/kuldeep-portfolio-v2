@@ -5,6 +5,7 @@
  */
 
 import Navbar from "./components/layout/Navbar";
+import About from "./sections/About";
 import Hero from "./sections/Hero";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
     <main className="min-h-screen bg-slate-950 text-white">
       <Navbar />
       <Hero />
+      <About />
     </main>
   );
 }
