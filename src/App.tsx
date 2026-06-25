@@ -6,14 +6,16 @@
 
 import Navbar from "./components/layout/Navbar";
 import About from "./sections/About";
+import Experience from "./sections/Experience";
 import Hero from "./sections/Hero";
 
 function App() {
   return (
-    <main className="min-h-screen bg-slate-950 text-white">
+    <main className="min-h-screen bg-[var(--color-black)] text-white">
       <Navbar />
       <Hero />
       <About />
+      <Experience />
     </main>
   );
 }

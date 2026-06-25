@@ -83,26 +83,44 @@
  * and global theme colors for easy future rebranding.
  */
 
+/**
+ * Hero.tsx
+ * Premium landing section using global theme variables.
+ * Change hero colors in index.css, not inside this component.
+ */
+
+
+/**
+ * Hero.tsx
+ * Premium landing section using global theme variables.
+ * Change hero colors in index.css, not inside this component.
+ */
+
 import { motion } from "framer-motion";
 import { ArrowDown, Download, MapPin } from "lucide-react";
 
+import profileImage from "../assets/images/profile.webp";
 import SocialLink from "../components/ui/SocialLink";
 import { profile } from "../data/profile";
+import { smoothTransition, zoomIn } from "../utils/animations";
 
 function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center overflow-hidden bg-[var(--color-dark)] px-4 pb-16 pt-28 sm:px-6 lg:px-12 lg:py-20"
+      className="relative flex min-h-screen items-center overflow-hidden bg-[var(--section-bg-hero-left)] px-4 pb-16 pt-28 sm:px-6 lg:px-12 lg:py-20"
     >
-      <div className="absolute inset-0 bg-[linear-gradient(135deg,var(--color-secondary)_0%,var(--color-secondary)_52%,var(--color-primary)_52%,var(--color-primary)_100%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(244,180,0,0.2),transparent_30%),linear-gradient(90deg,rgba(2,6,23,0.94),rgba(2,6,23,0.38))]" />
+      {/* Global hero background: dark/yellow diagonal split from index.css. */}
+      <div className="absolute inset-0 bg-[image:var(--hero-gradient)]" />
+
+      {/* Global overlay keeps text readable without changing component colors. */}
+      <div className="absolute inset-0 bg-[image:var(--hero-overlay)]" />
 
       <div className="section-container relative grid w-full items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
         <motion.div
-          initial={{ opacity: 0, y: 28 }}
+          initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={smoothTransition}
           className="max-w-3xl"
         >
           <p className="section-label">{profile.role}</p>
@@ -138,15 +156,22 @@ function Hero() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.88 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.15 }}
+          variants={zoomIn}
+          initial="hidden"
+          animate="visible"
+          transition={{ ...smoothTransition, delay: 0.12 }}
           className="flex justify-center lg:justify-end"
         >
-          <div className="relative flex size-56 items-center justify-center rounded-full border-[12px] border-[var(--color-primary)] bg-[var(--color-dark)] text-5xl font-bold text-white shadow-2xl shadow-black/40 sm:size-72">
+          <div className="relative size-56 rounded-full border-[12px] border-[var(--color-primary)] bg-[var(--color-black)] shadow-2xl shadow-black/40 sm:size-72">
+            {/* Decorative rings keep the old portfolio profile focus, but cleaner. */}
             <div className="absolute -inset-6 rounded-full border border-[var(--color-primary)]/30" />
             <div className="absolute -inset-12 rounded-full border border-[var(--color-primary)]/10" />
-            KS
+
+            <img
+              src={profileImage}
+              alt="Kuldeep Singh"
+              className="relative z-10 size-full rounded-full object-cover"
+            />
           </div>
         </motion.div>
       </div>

@@ -9,12 +9,43 @@
 :root {
   --color-primary: #f4b400;
   --color-primary-hover: #facc15;
-  --color-secondary: #101820;
-  --color-dark: #020617;
-  --color-surface: #0f172a;
+
+  --color-black: #020617;
+  --color-navy: #101820;
+  --color-blue: #16213e;
+  --color-blue-soft: #1e3a5f;
+
   --color-light: #ffffff;
+  --color-light-soft: #f8fafc;
   --color-muted: #64748b;
   --color-border: #e2e8f0;
+
+  --section-bg-hero-left: var(--color-navy);
+  --section-bg-hero-right: var(--color-primary);
+  --section-bg-about: var(--color-light);
+  --section-bg-experience: var(--color-blue);
+  --section-bg-skills: var(--color-light-soft);
+  --section-bg-projects: var(--color-navy);
+  --section-bg-contact: var(--color-black);
+
+  --hero-gradient: linear-gradient(
+    135deg,
+    var(--section-bg-hero-left) 0%,
+    var(--section-bg-hero-left) 52%,
+    var(--section-bg-hero-right) 52%,
+    var(--section-bg-hero-right) 100%
+  );
+
+  --hero-overlay: radial-gradient(
+      circle at 20% 20%,
+      rgb(244 180 0 / 0.2),
+      transparent 30%
+    ),
+    linear-gradient(
+      90deg,
+      rgb(2 6 23 / 0.94),
+      rgb(2 6 23 / 0.38)
+    );
 
   --container-width: 72rem;
   --section-padding-y: 6rem;
@@ -99,4 +130,17 @@ body {
   border-color: var(--color-primary);
   color: var(--color-primary);
   transform: translateY(-2px);
+}
+
+.glass-card {
+  border: 1px solid rgb(255 255 255 / 0.1);
+  background: rgb(255 255 255 / 0.065);
+  box-shadow: 0 24px 80px rgb(0 0 0 / 0.16);
+  backdrop-filter: blur(18px);
+}
+
+.soft-card {
+  border: 1px solid var(--color-border);
+  background: var(--color-light);
+  box-shadow: 0 18px 60px rgb(15 23 42 / 0.08);
 }
