@@ -1,7 +1,7 @@
 /**
  * SocialLink.tsx
- * Reusable social profile link. Brand icons come from react-icons
- * because it supports GitHub, LinkedIn, Instagram, and Google Play clearly.
+ * Reusable social profile link for the Hero section.
+ * Hero icons intentionally remain identical in both light and dark mode.
  */
 
 import {
@@ -19,7 +19,6 @@ interface SocialLinkProps {
   social: SocialLinkType;
 }
 
-// Maps each platform from profile data to its matching brand icon.
 const iconMap: Record<SocialLinkType["platform"], IconType> = {
   linkedin: FaLinkedin,
   github: FaGithub,
@@ -37,9 +36,12 @@ function SocialLink({ social }: SocialLinkProps) {
       target={social.platform === "email" ? undefined : "_blank"}
       rel={social.platform === "email" ? undefined : "noreferrer"}
       aria-label={social.label}
-      className="inline-flex size-11 items-center justify-center rounded-full border border-slate-700 bg-slate-900/80 text-slate-300 transition hover:border-amber-400 hover:text-amber-400"
+      className="group inline-flex size-12 items-center justify-center rounded-full border border-white/20 bg-[#0f172a]/70 !text-white shadow-lg shadow-black/20 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-[var(--color-primary)] hover:bg-[#0f172a]/90 hover:text-[var(--color-primary)] hover:shadow-[0_0_26px_rgba(244,180,0,0.28)] active:scale-95"
     >
-      <Icon size={20} />
+      <Icon
+        size={20}
+        className="transition-transform duration-300 group-hover:scale-110"
+      />
     </a>
   );
 }

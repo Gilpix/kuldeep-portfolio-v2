@@ -36,8 +36,10 @@ function useTypewriter(words: string[]) {
     const isWordDeleted = letterCount === 0;
 
     const typingSpeed = isDeleting ? 45 : 85;
-    const pauseBeforeDeleting = isWordComplete && !isDeleting ? 1200 : typingSpeed;
-    const pauseBeforeNextWord = isWordDeleted && isDeleting ? 350 : pauseBeforeDeleting;
+    const pauseBeforeDeleting =
+      isWordComplete && !isDeleting ? 1200 : typingSpeed;
+    const pauseBeforeNextWord =
+      isWordDeleted && isDeleting ? 350 : pauseBeforeDeleting;
 
     const timer = window.setTimeout(() => {
       if (isWordComplete && !isDeleting) {
@@ -52,7 +54,7 @@ function useTypewriter(words: string[]) {
       }
 
       setLetterCount((currentCount) =>
-        isDeleting ? currentCount - 1 : currentCount + 1
+        isDeleting ? currentCount - 1 : currentCount + 1,
       );
     }, pauseBeforeNextWord);
 
@@ -96,12 +98,12 @@ function Hero() {
           <motion.h2
             variants={fadeUp}
             className="mt-5 min-h-[3.5rem] text-3xl font-black leading-tight tracking-[-0.03em] bg-gradient-to-r from-white via-white to-slate-300 bg-clip-text text-transparent sm:text-4xl lg:text-5xl"
-            >
+          >
             <span>{typedRole}</span>
             <span className="ml-1 inline-block animate-pulse font-normal text-[var(--color-primary)]">
-                |
+              |
             </span>
-            </motion.h2>
+          </motion.h2>
 
           <motion.p
             variants={fadeUp}
@@ -115,7 +117,10 @@ function Hero() {
               View Projects <ArrowDown size={18} />
             </a>
 
-            <a href="#contact" className="secondary-button">
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 rounded-full border border-white/60 bg-white/5 px-6 py-3 text-sm font-bold !text-white transition hover:-translate-y-0.5 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+            >
               Contact Me <Download size={18} />
             </a>
           </motion.div>
