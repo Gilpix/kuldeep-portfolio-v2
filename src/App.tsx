@@ -10,6 +10,7 @@ import About from "./sections/About";
 import Experience from "./sections/Experience";
 import Hero from "./sections/Hero";
 import Skills from "./sections/Skills";
+import Projects from "./sections/Projects";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <About />
       <Experience />
       <Skills />
+      <Projects />
     </main>
   );
 }
