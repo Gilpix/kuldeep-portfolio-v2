@@ -49,7 +49,7 @@
   --section-bg-experience: transparent;
   --section-bg-skills: transparent;
   --section-bg-projects: transparent;
-  --section-bg-contact: var(--color-black);
+  --section-bg-contact: transparent;
 
   /* Hero background */
   --hero-gradient: linear-gradient(
@@ -95,6 +95,7 @@
   --section-bg-experience: transparent;
   --section-bg-skills: transparent;
   --section-bg-projects: transparent;
+  --section-bg-contact: transparent;
 
   --shadow-card: 0 24px 80px rgb(0 0 0 / 0.24);
   --shadow-card-strong: 0 30px 110px rgb(0 0 0 / 0.36);
@@ -210,8 +211,8 @@ a {
   align-items: center;
   gap: 0.5rem;
   border-radius: 999px;
-  border: 1px solid rgb(255 255 255 / 0.3);
-  color: white;
+  border: 1px solid var(--color-card-border);
+  color: var(--color-text);
   padding: 0.75rem 1.5rem;
   font-size: 0.875rem;
   font-weight: 700;

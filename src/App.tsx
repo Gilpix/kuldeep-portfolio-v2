@@ -11,6 +11,8 @@ import Experience from "./sections/Experience";
 import Hero from "./sections/Hero";
 import Skills from "./sections/Skills";
 import Projects from "./sections/Projects";
+import Contact from "./sections/Contact";
+import Footer from "./components/layout/Footer";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
       <Experience />
       <Skills />
       <Projects />
+      <Contact />
+      <Footer />
     </main>
   );
 }
