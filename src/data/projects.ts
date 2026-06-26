@@ -22,7 +22,13 @@ export interface Project {
   badge?: string;
   metrics?: { value: string; label: string }[];
   featured: boolean;
+
+  // Used on main project cards
   image: string;
+
+  // Used inside project modal gallery
+  images?: string[];
+
   role: string;
   overview: string;
   highlights: string[];
@@ -40,6 +46,91 @@ export const projectFilters = [
 
 export const projects: Project[] = [
   {
+    id: "tp3-cms",
+    title: "Top Parent CMS",
+    subtitle: "Enterprise CMS for a 1M+ downloads education mobile app",
+    category: "web",
+    featured: true,
+    badge: "Featured Project",
+    image: projectImages.brilcsCms,
+    images: [
+      projectImages.brilcsCms,
+      projectImages.brilcsWebsite,
+      projectImages.brilcsCms,
+      projectImages.brilcsWebsite,
+      projectImages.brilcsCms,
+      projectImages.brilcsWebsite,
+      projectImages.brilcsCms,
+      projectImages.brilcsWebsite,
+    ],
+    role: "Full Stack Developer",
+    metrics: [
+      { value: "1M+", label: "App Downloads" },
+      { value: "CMS", label: "Platform" },
+      { value: "Team", label: "Product" },
+    ],
+    overview:
+      "An enterprise content management system built for Top Parent, a parent-child education mobile app with 1M+ downloads. The CMS supported content workflows, backend APIs, reusable frontend modules, and production deployment processes.",
+    highlights: [
+      "Developed CMS features using React, Node.js, Express, and MongoDB.",
+      "Implemented reusable React components and RTK Query based data flow.",
+      "Worked with AWS Lambda, Route53, Amplify, Swagger, Docker, and deployment workflows.",
+      "Improved maintainability through structured code, API documentation, and modular frontend patterns.",
+    ],
+    technologies: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "RTK Query",
+      "Redux Toolkit",
+      "AWS Lambda",
+      "Amplify",
+      "Swagger",
+      "Docker",
+    ],
+    links: [],
+  },
+  {
+    id: "brilcs-website",
+    title: "BRILCS Website",
+    subtitle: "Premium corporate website for BRILCS",
+    category: "web",
+    featured: false,
+    badge: "Featured Project",
+    image: projectImages.brilcsWebsite,
+    images: [projectImages.brilcsWebsite],
+    role: "Founder / Full Stack Developer",
+    metrics: [
+      { value: "Live", label: "Website" },
+      { value: "SEO", label: "Ready" },
+      { value: "CMS", label: "Integrated" },
+    ],
+    overview:
+      "A modern corporate website built for BRILCS with responsive layouts, polished UI, CMS-ready content sections, and production deployment planning.",
+    highlights: [
+      "Built a premium responsive interface for desktop, tablet, and mobile.",
+      "Integrated content-ready sections for insights, careers, reports, and services.",
+      "Focused on performance, SEO structure, reusable components, and brand consistency.",
+    ],
+    technologies: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "RTK Query",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+    ],
+    links: [
+      {
+        label: "Visit Website",
+        url: "https://brilcs.com",
+        type: "live",
+      },
+    ],
+  },
+  {
     id: "brilcs-cms",
     title: "BRILCS CMS",
     subtitle: "Custom CMS platform for BRILCS content operations",
@@ -47,14 +138,15 @@ export const projects: Project[] = [
     featured: false,
     badge: "Professional Project",
     image: projectImages.brilcsCms,
+    images: [projectImages.brilcsCms],
     role: "Founder / Full Stack Developer",
-    overview:
-      "A custom CMS platform built to manage BRILCS website content, including insights, reports, careers, media uploads, authentication, and structured content workflows.",
     metrics: [
       { value: "CMS", label: "Platform" },
       { value: "AWS", label: "Cloud" },
       { value: "Full", label: "Ownership" },
     ],
+    overview:
+      "A custom CMS platform built to manage BRILCS website content, including insights, reports, careers, media uploads, authentication, and structured content workflows.",
     highlights: [
       "Built modular CMS flows for insights, reports, careers, and media management.",
       "Implemented authentication, protected routes, and backend API integration.",
@@ -75,38 +167,6 @@ export const projects: Project[] = [
     links: [],
   },
   {
-    id: "brilcs-website",
-    title: "BRILCS Website",
-    subtitle: "Premium corporate website for BRILCS",
-    category: "web",
-    featured: false,
-    badge: "Featured Project",
-    image: projectImages.brilcsWebsite,
-    role: "Founder / Full Stack Developer",
-    overview:
-      "A modern corporate website built for BRILCS with responsive layouts, polished UI, CMS-ready content sections, and production deployment planning.",
-    metrics: [
-      { value: "Live", label: "Website" },
-      { value: "SEO", label: "Ready" },
-      { value: "CMS", label: "Integrated" },
-    ],
-    highlights: [
-      "Built a premium responsive interface for desktop, tablet, and mobile.",
-      "Integrated content-ready sections for insights, careers, reports, and services.",
-      "Focused on performance, SEO structure, reusable components, and brand consistency.",
-    ],
-    technologies: [
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "RTK Query",
-      "Node.js",
-      "Express",
-      "PostgreSQL",
-    ],
-    links: [],
-  },
-  {
     id: "udaan-fc",
     title: "Udaan FC",
     subtitle: "Multi-page corporate website for a facility company",
@@ -114,14 +174,15 @@ export const projects: Project[] = [
     featured: false,
     badge: "Live Website",
     image: projectImages.udaanFc,
+    images: [projectImages.udaanFc],
     role: "Web Developer",
-    overview:
-      "A professional static website for Udaan Facility Company, designed across multiple pages to present services, company information, and contact details clearly.",
     metrics: [
       { value: "10+", label: "Pages" },
       { value: "Live", label: "Website" },
       { value: "Client", label: "Project" },
     ],
+    overview:
+      "A professional static website for Udaan Facility Company, designed across multiple pages to present services, company information, and contact details clearly.",
     highlights: [
       "Built a multi-page business website with responsive layouts.",
       "Created service-focused pages for a professional company presence.",
@@ -137,58 +198,23 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "tp3-cms",
-
-    title: "Top Parent CMS",
-    subtitle: "Enterprise CMS for a 1M+ downloads education mobile app",
-    badge: "Featured Project",
-    metrics: [
-      { value: "1M+", label: "App Downloads" },
-      { value: "CMS", label: "Platform" },
-      { value: "Team", label: "Product" },
-    ],
-    overview:
-      "An enterprise content management system built for Top Parent, a parent-child education mobile app with 1M+ downloads. The CMS supported content workflows, backend APIs, reusable frontend modules, and production deployment processes.",
-    category: "web",
-    featured: true,
-    image: projectImages.brilcsCms,
-    role: "Full Stack Developer",
-    highlights: [
-      "Built CMS features using React, Node.js, Express, and MongoDB.",
-      "Implemented reusable components and RTK Query based data flow.",
-      "Worked with AWS Lambda, Route53, Amplify, Swagger, and deployment workflows.",
-      "Improved maintainability through structured code and API documentation.",
-    ],
-    technologies: [
-      "React",
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "RTK Query",
-      "Redux Toolkit",
-      "AWS Lambda",
-      "Amplify",
-      "Swagger",
-      "Docker",
-    ],
-    links: [],
-  },
-  {
     id: "piknix",
     title: "Piknix",
     subtitle:
       "Local grocery marketplace with merchant ordering and delivery workflows.",
     category: "web",
     featured: true,
+    badge: "Professional Project",
     image: projectImages.piknix,
+    images: [projectImages.piknix],
     role: "Software Developer",
     overview:
-      "An e-commerce marketplace that allowed local merchants to register, manage products, and sell groceries online.",
+      "Piknix was a local grocery e-commerce marketplace that allowed merchants to register, manage products, and sell groceries online.",
     highlights: [
-      "Developed responsive web pages and EJS templates.",
-      "Worked on REST APIs, database design, authentication, and payment integration.",
-      "Configured Nginx, SSL, Docker, and deployment setup.",
-      "Implemented SEO improvements and performance-focused frontend changes.",
+      "Developed responsive views and templates using JavaScript and EJS.",
+      "Worked on REST APIs, database schema design, authentication, and payment integration.",
+      "Integrated PayPal, Google APIs, Passport authentication, SendGrid, Twilio, and localization workflows.",
+      "Configured Docker, Nginx, SSL certificates, SEO improvements, and deployment setup.",
     ],
     technologies: [
       "JavaScript",
@@ -203,7 +229,7 @@ export const projects: Project[] = [
     ],
     links: [
       {
-        label: "Visit",
+        label: "Visit Website",
         url: "https://www.piknix.com",
         type: "live",
       },
@@ -216,6 +242,7 @@ export const projects: Project[] = [
     category: "web",
     featured: true,
     image: "react_mania.png",
+    images: ["react_mania.png"],
     role: "Frontend Developer",
     overview:
       "A responsive React application containing multiple small to medium projects built with React hooks and Bootstrap.",
@@ -227,12 +254,12 @@ export const projects: Project[] = [
     technologies: ["React", "JavaScript", "React Hooks", "Bootstrap", "CSS"],
     links: [
       {
-        label: "Visit",
+        label: "View Demo",
         url: "https://optimistic-wing-69cbaa.netlify.app/",
         type: "live",
       },
       {
-        label: "Code",
+        label: "View Code",
         url: "https://github.com/Gilpix/ReactMania",
         type: "code",
       },
@@ -245,25 +272,28 @@ export const projects: Project[] = [
     category: "web",
     featured: true,
     image: "saniamigo.png",
+    images: ["saniamigo.png"],
     role: "Freelance Web Developer",
     overview:
-      "A responsive promotional website for Sani-Amigo by 4S Innovative Solutions Inc.",
+      "A responsive promotional website for Sani-Amigo, a smart personal sanitizer dispensing device by 4S Innovative Solutions Inc.",
     highlights: [
-      "Designed and developed a responsive marketing website.",
-      "Created HTML email templates and newsletters.",
+      "Designed and developed a responsive marketing website using a mobile-first approach.",
+      "Created HTML email templates and newsletters for marketing campaigns.",
       "Configured Nginx and Let's Encrypt SSL certificates.",
+      "Handled web page development from design to testing and production deployment.",
     ],
     technologies: [
       "JavaScript",
       "HTML5",
       "Bootstrap",
       "Node.js",
+      "Express",
       "Nginx",
       "Docker",
     ],
     links: [
       {
-        label: "Visit",
+        label: "Visit Website",
         url: "https://saniamigo.com/",
         type: "live",
       },
@@ -276,6 +306,7 @@ export const projects: Project[] = [
     category: "web",
     featured: false,
     image: "yelpcamp.png",
+    images: ["yelpcamp.png"],
     role: "Full Stack Developer",
     overview:
       "A responsive web application for listing, viewing, and managing campground information.",
@@ -287,7 +318,7 @@ export const projects: Project[] = [
     technologies: ["Node.js", "Express", "MongoDB", "Mongoose", "Passport"],
     links: [
       {
-        label: "Code",
+        label: "View Code",
         url: "https://github.com/Gilpix/YelpCamp",
         type: "code",
       },
@@ -300,18 +331,19 @@ export const projects: Project[] = [
     category: "web",
     featured: false,
     image: "search_engine.png",
+    images: ["search_engine.png"],
     role: "Full Stack Developer",
     overview:
-      "A React and Node.js application that searches words across uploaded text files and returns matching results.",
+      "A full-stack React and Node.js application that provides persistent search functionality across uploaded text files.",
     highlights: [
       "Built React frontend and Node.js backend.",
-      "Created REST APIs for search results.",
+      "Created REST APIs for returning search results.",
       "Handled text file search logic and persistent data flow.",
     ],
     technologies: ["React", "Node.js", "Express", "REST API", "Bootstrap"],
     links: [
       {
-        label: "Code",
+        label: "View Code",
         url: "https://github.com/Gilpix/FullStackWebDeveloperChallenge",
         type: "code",
       },
@@ -324,6 +356,7 @@ export const projects: Project[] = [
     category: "web",
     featured: false,
     image: "RestFul Blog.png",
+    images: ["RestFul Blog.png"],
     role: "Full Stack Developer",
     overview:
       "A blog application for creating, reading, updating, and deleting blog posts using RESTful routing.",
@@ -341,7 +374,7 @@ export const projects: Project[] = [
     ],
     links: [
       {
-        label: "Code",
+        label: "View Code",
         url: "https://github.com/Gilpix/RESTFulBlog",
         type: "code",
       },
@@ -354,6 +387,7 @@ export const projects: Project[] = [
     category: "web",
     featured: false,
     image: "myportfolio.png",
+    images: ["myportfolio.png"],
     role: "Frontend Developer",
     overview:
       "The original portfolio website built with HTML, CSS, JavaScript, Bootstrap, and jQuery.",
@@ -365,12 +399,12 @@ export const projects: Project[] = [
     technologies: ["HTML", "CSS", "JavaScript", "jQuery", "Bootstrap"],
     links: [
       {
-        label: "Visit",
+        label: "View Demo",
         url: "https://gilpix.github.io/My-Portfolio/",
         type: "live",
       },
       {
-        label: "Code",
+        label: "View Code",
         url: "https://github.com/Gilpix/My-Portfolio",
         type: "code",
       },
@@ -383,23 +417,24 @@ export const projects: Project[] = [
     category: "web",
     featured: true,
     image: "tekhubweb.png",
+    images: ["tekhubweb.png"],
     role: "Frontend Developer",
     overview:
-      "A frontend design for a college device lending system where students could browse and borrow devices.",
+      "A frontend design for a college device lending system where students could browse and borrow devices such as laptops and LAN cables.",
     highlights: [
       "Built responsive screens for product listing and borrowing.",
-      "Implemented sign-in and sign-up validation.",
+      "Implemented sign-in and sign-up form validation.",
       "Created user-friendly web flows for students.",
     ],
     technologies: ["HTML", "CSS", "JavaScript", "jQuery", "Bootstrap"],
     links: [
       {
-        label: "Visit",
+        label: "View Demo",
         url: "https://gilpix.github.io/TekHub-Lending-Web-Application/",
         type: "live",
       },
       {
-        label: "Code",
+        label: "View Code",
         url: "https://github.com/Gilpix/TekHub-Lending-Web-Application",
         type: "code",
       },
@@ -412,20 +447,36 @@ export const projects: Project[] = [
     category: "mobile",
     featured: true,
     image: projectImages.tekhubMobile,
+    images: [projectImages.tekhubMobile],
     role: "Android Developer",
     overview:
-      "An Android app for students to borrow devices from college inventory.",
+      "An Android application used by students to borrow devices from college inventory.",
     highlights: [
-      "Implemented login, registration, borrowing, waiting list, filtering, and feedback.",
+      "Implemented login, registration, borrowing, waiting list, filtering, feedback, and rating features.",
       "Connected Android app with Amazon RDS MySQL through web calls.",
-      "Worked with Agile methodology and SRS documentation.",
+      "Worked with Agile Scrum methodology and created SRS documentation.",
     ],
     technologies: ["Android", "Java", "MySQL", "Amazon RDS", "Firebase"],
     links: [
       {
-        label: "Code",
+        label: "View Code",
         url: "https://github.com/Gilpix/TekHub",
         type: "code",
+      },
+      {
+        label: "Web API",
+        url: "https://github.com/Gilpix/TekHub-WebCalls",
+        type: "code",
+      },
+      {
+        label: "SRS Document",
+        url: "/assets/res/LendSystemIteration3.pdf",
+        type: "document",
+      },
+      {
+        label: "Presentation",
+        url: "/assets/res/TekhubFinalPresentation.pdf",
+        type: "document",
       },
     ],
   },
@@ -436,20 +487,26 @@ export const projects: Project[] = [
     category: "mobile",
     featured: false,
     image: projectImages.foodBuddyMobile,
+    images: [projectImages.foodBuddyMobile],
     role: "Android Developer",
     overview:
-      "An Android app that allows users to select a restaurant and find a buddy to join them for food.",
+      "An Android app that allows users to select a restaurant and find a buddy or partner to join them for food.",
     highlights: [
-      "Built registration and password reset functionality.",
-      "Displayed available users with RecyclerView.",
+      "Built user registration and password reset functionality.",
+      "Displayed available users with RecyclerView from a MySQL database.",
       "Implemented Firebase Cloud Messaging notifications.",
     ],
     technologies: ["Android", "Java", "Firebase", "MySQL", "XAMPP"],
     links: [
       {
-        label: "Code",
+        label: "View Code",
         url: "https://github.com/Gilpix/Food-Buddy",
         type: "code",
+      },
+      {
+        label: "SRS Document",
+        url: "/assets/res/foodbuddySrs.pdf",
+        type: "document",
       },
     ],
   },
@@ -460,21 +517,22 @@ export const projects: Project[] = [
     category: "web",
     featured: false,
     image: "carmarket.png",
+    images: ["carmarket.png"],
     role: "Frontend Developer",
     overview: "A static frontend design for a car selling web application.",
     highlights: [
       "Designed home, contact, sign-in, sign-up, and car display pages.",
-      "Built with HTML and CSS.",
+      "Built the interface with HTML and CSS.",
     ],
     technologies: ["HTML", "CSS"],
     links: [
       {
-        label: "Visit",
+        label: "View Demo",
         url: "https://gilpix.github.io/CarMarket/index.html",
         type: "live",
       },
       {
-        label: "Code",
+        label: "View Code",
         url: "https://github.com/Gilpix/CarMarket",
         type: "code",
       },
@@ -487,6 +545,7 @@ export const projects: Project[] = [
     category: "mobile",
     featured: true,
     image: projectImages.trafficCanadaMobile,
+    images: [projectImages.trafficCanadaMobile],
     role: "Android Developer",
     overview:
       "A theory and quiz-based Android app for users preparing for the Canadian driving test.",
@@ -498,12 +557,12 @@ export const projects: Project[] = [
     technologies: ["Android", "Java", "XML", "Google Play Console"],
     links: [
       {
-        label: "Visit",
+        label: "Play Store",
         url: "https://play.google.com/store/apps/details?id=com.vid_lancer.trafficroadsignscanada",
         type: "live",
       },
       {
-        label: "Code",
+        label: "View Code",
         url: "https://github.com/Gilpix/TrafficRoadSignsCanada",
         type: "code",
       },
@@ -516,6 +575,7 @@ export const projects: Project[] = [
     category: "web",
     featured: false,
     image: "colorguess.png",
+    images: ["colorguess.png"],
     role: "Frontend Developer",
     overview:
       "A browser game where users guess the correct color square based on an RGB value.",
@@ -527,12 +587,12 @@ export const projects: Project[] = [
     technologies: ["JavaScript", "HTML", "CSS", "Bootstrap"],
     links: [
       {
-        label: "Visit",
+        label: "View Demo",
         url: "https://gilpix.github.io/ColorGuessingGame/",
         type: "live",
       },
       {
-        label: "Code",
+        label: "View Code",
         url: "https://github.com/Gilpix/ColorGuessingGame",
         type: "code",
       },
@@ -545,6 +605,7 @@ export const projects: Project[] = [
     category: "web",
     featured: false,
     image: "todolist.png",
+    images: ["todolist.png"],
     role: "Frontend Developer",
     overview:
       "A responsive to-do list app where users can add, remove, and mark tasks as completed.",
@@ -556,12 +617,12 @@ export const projects: Project[] = [
     technologies: ["jQuery", "CSS", "HTML"],
     links: [
       {
-        label: "Visit",
+        label: "View Demo",
         url: "https://gilpix.github.io/ToDoList/",
         type: "live",
       },
       {
-        label: "Code",
+        label: "View Code",
         url: "https://github.com/Gilpix/ToDoList",
         type: "code",
       },
@@ -574,6 +635,7 @@ export const projects: Project[] = [
     category: "design",
     featured: false,
     image: "travel.png",
+    images: ["travel.png"],
     role: "UI/UX Designer",
     overview:
       "A mobile app prototype for an intercity and intracity bus booking system.",
@@ -583,7 +645,13 @@ export const projects: Project[] = [
       "Prepared screen-flow documentation.",
     ],
     technologies: ["Justinmind", "UI Design", "Prototype", "Screen Flow"],
-    links: [],
+    links: [
+      {
+        label: "Screen Flow",
+        url: "/assets/res/travelWithUs.docx",
+        type: "document",
+      },
+    ],
   },
   {
     id: "share-expenses",
@@ -592,16 +660,28 @@ export const projects: Project[] = [
     category: "design",
     featured: false,
     image: "shareexpenses.png",
+    images: ["shareexpenses.png"],
     role: "UI/UX Designer",
     overview:
-      "An Android app design for calculating personal expenses and splitting expenses between users.",
+      "An Android app design for calculating personal expenses and splitting expenses between two or more users.",
     highlights: [
       "Designed expense tracking and group bill splitting flows.",
       "Created reminder and notification concepts.",
       "Prepared screen-flow and presentation documents.",
     ],
     technologies: ["Justinmind", "UI Design", "Prototype", "Documentation"],
-    links: [],
+    links: [
+      {
+        label: "Screen Flow",
+        url: "/assets/res/Share Expense ScreenFlowDiagram.pdf",
+        type: "document",
+      },
+      {
+        label: "Presentation",
+        url: "/assets/res/ShareExpensesPresentation.pdf",
+        type: "document",
+      },
+    ],
   },
   {
     id: "pro-quiz",
@@ -610,23 +690,24 @@ export const projects: Project[] = [
     category: "mobile",
     featured: false,
     image: projectImages.proQuizMobile,
+    images: [projectImages.proQuizMobile],
     role: "Android Developer",
     overview:
       "A quiz game with categories such as sports, logos, music, nature, and monuments.",
     highlights: [
       "Built Android quiz flows and category-based questions.",
-      "Published app on Google Play Store.",
+      "Published the app on Google Play Store.",
       "Classified users based on performance level.",
     ],
     technologies: ["Android", "Java", "XML", "Google Play Store"],
     links: [
       {
-        label: "Visit",
+        label: "Play Store",
         url: "https://play.google.com/store/apps/details?id=com.gilpix.test",
         type: "live",
       },
       {
-        label: "Code",
+        label: "View Code",
         url: "https://github.com/Gilpix/ProQuiz",
         type: "code",
       },
