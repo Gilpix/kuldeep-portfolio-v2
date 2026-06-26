@@ -70,7 +70,7 @@ function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center overflow-hidden bg-[var(--section-bg-hero-left)] px-4 pb-16 pt-28 sm:px-6 lg:px-12 lg:py-20"
+      className="relative flex min-h-screen w-full max-w-[100vw] items-center overflow-hidden bg-[var(--section-bg-hero-left)] px-4 pb-16 pt-28 sm:px-6 lg:px-12 lg:py-20"
     >
       <div className="hero-gradient absolute inset-0" />
       <div className="hero-overlay absolute inset-0" />
