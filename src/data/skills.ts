@@ -28,11 +28,11 @@ export interface SkillCategory {
 export const skillCategories: SkillCategory[] = [
   {
     title: "Frontend Engineering",
-    subtitle: "Interfaces users actually enjoy",
+    subtitle: "Modern interfaces and product UI",
     description:
-      "Building responsive, accessible, and maintainable interfaces with reusable components and clean UI architecture.",
+      "Building responsive, accessible, and maintainable interfaces with strong component architecture, clean state management, and polished user experiences.",
     icon: Code2,
-    strength: "95%",
+    strength: "Core",
     accent: "yellow",
     skills: [
       "React",
@@ -42,17 +42,18 @@ export const skillCategories: SkillCategory[] = [
       "Redux Toolkit",
       "RTK Query",
       "Ant Design",
-      "HTML5",
-      "CSS3",
+      "Framer Motion",
+      "Responsive UI",
+      "Component Architecture",
     ],
   },
   {
     title: "Backend & APIs",
-    subtitle: "Business logic that scales",
+    subtitle: "Application logic and integrations",
     description:
-      "Designing APIs, authentication flows, backend services, and product workflows that support real applications.",
+      "Designing backend services, REST APIs, authentication flows, business workflows, background jobs, and integrations for real-world applications.",
     icon: Server,
-    strength: "90%",
+    strength: "Strong",
     accent: "yellow",
     skills: [
       "Node.js",
@@ -64,15 +65,16 @@ export const skillCategories: SkillCategory[] = [
       "Scala",
       "RabbitMQ",
       "Swagger",
+      "API Design",
     ],
   },
   {
     title: "Cloud, Database & DevOps",
-    subtitle: "Production-ready ownership",
+    subtitle: "Reliable production systems",
     description:
-      "Working across databases, serverless cloud, deployments, storage, and infrastructure needed to ship reliable apps.",
+      "Working across cloud services, databases, deployment workflows, server configuration, storage, and infrastructure needed to ship stable applications.",
     icon: Cloud,
-    strength: "88%",
+    strength: "Strong",
     accent: "blue",
     skills: [
       "AWS Lambda",
@@ -85,34 +87,37 @@ export const skillCategories: SkillCategory[] = [
       "DynamoDB",
       "Docker",
       "Nginx",
+      "DigitalOcean",
+      "CI/CD",
     ],
   },
   {
-    title: "Product & Leadership",
-    subtitle: "Thinking beyond tickets",
+    title: "Product & Ownership",
+    subtitle: "Beyond writing code",
     description:
-      "Connecting technical execution with product decisions, user experience, delivery planning, and business outcomes.",
+      "Connecting engineering decisions with product goals, client needs, usability, documentation, delivery planning, and long-term business value.",
     icon: UsersRound,
-    strength: "85%",
+    strength: "Applied",
     accent: "purple",
     skills: [
       "Product Thinking",
-      "Architecture",
-      "Team Collaboration",
-      "Documentation",
-      "Client Delivery",
+      "Technical Ownership",
       "CMS Strategy",
+      "Client Delivery",
+      "Documentation",
+      "Architecture Planning",
       "Agile",
       "Code Reviews",
+      "Business Workflows",
     ],
   },
   {
     title: "AI & Automation",
-    subtitle: "Building faster and smarter",
+    subtitle: "Smarter workflows and systems",
     description:
-      "Using AI tools, automation workflows, and modern development systems to improve delivery speed and product quality.",
+      "Using AI tools, automation, workflow design, and modern development practices to improve delivery speed, content systems, and product quality.",
     icon: Bot,
-    strength: "80%",
+    strength: "Growing",
     accent: "green",
     skills: [
       "AI Tools",
@@ -128,8 +133,8 @@ export const skillCategories: SkillCategory[] = [
 ];
 
 export const skillStats = [
-  { value: "4+", label: "Years", icon: Rocket },
-  { value: "20+", label: "Tech", icon: Database },
-  { value: "15+", label: "Projects", icon: Cloud },
-  { value: "100%", label: "Ownership", icon: Code2 },
+  { value: "7+", label: "Years", icon: Rocket },
+  { value: "20+", label: "Projects", icon: Cloud },
+  { value: "30+", label: "Tech", icon: Database },
+  { value: "Full", label: "Stack", icon: Code2 },
 ];

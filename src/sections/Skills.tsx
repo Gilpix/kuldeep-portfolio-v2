@@ -31,6 +31,9 @@ function Skills() {
   const [hoveredSkill, setHoveredSkill] = useState<number | null>(null);
   const [mobileSkill, setMobileSkill] = useState(0);
 
+  const [selectedSkill, setSelectedSkill] = useState<number | null>(null);
+  const [selectedStat, setSelectedStat] = useState<number | null>(null);
+
   const mobileCategory = skillCategories[mobileSkill];
   const MobileIcon = mobileCategory.icon;
   const mobileAccent = accentMap[mobileCategory.accent];
@@ -67,10 +70,11 @@ function Skills() {
           viewport={viewportOnce}
           className="relative lg:sticky lg:top-24 lg:self-start"
         >
-          <div className="relative mx-auto min-h-[760px] max-w-[580px] sm:min-h-[620px]">
-            <div className="absolute left-1/2 top-[34%] size-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[var(--color-primary)]/30 sm:size-[420px] lg:top-[40%]" />
-            <div className="absolute left-1/2 top-[34%] size-[230px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[var(--color-card-border)] sm:size-[310px] lg:top-[40%]" />
-            <div className="absolute left-1/2 top-[34%] size-[155px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[var(--color-primary)]/30 sm:size-[210px] lg:top-[40%]" />
+          {/* <div className="relative mx-auto min-h-[760px] max-w-[580px] sm:min-h-[620px]"> */}
+          <div className="relative mx-auto min-h-[560px] max-w-[580px] sm:min-h-[620px]">
+            <div className="absolute left-1/2 top-[30%] size-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[var(--color-primary)]/30 sm:size-[420px] lg:top-[40%]" />
+            <div className="absolute left-1/2 top-[30%] size-[230px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[var(--color-card-border)] sm:size-[310px] lg:top-[40%]" />
+            <div className="absolute left-1/2 top-[30%] size-[155px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[var(--color-primary)]/30 sm:size-[210px] lg:top-[40%]" />
 
             <motion.div
               animate={{
@@ -82,7 +86,7 @@ function Skills() {
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="absolute left-1/2 top-[34%] size-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--color-primary)]/15 blur-xl sm:size-48 lg:top-[40%]"
+              className="absolute left-1/2 top-[30%] size-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--color-primary)]/15 blur-xl sm:size-48 lg:top-[40%]"
             />
 
             {/* Desktop orbit nodes only */}
@@ -142,7 +146,7 @@ function Skills() {
               initial={{ opacity: 0, scale: 0.92 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.35, ease: "easeOut" }}
-              className="absolute left-1/2 top-[34%] z-10 flex size-40 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border bg-[var(--color-glass)] text-center backdrop-blur-xl sm:top-[40%] sm:size-40"
+              className="absolute left-1/2 top-[30%] z-10 flex size-40 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border bg-[var(--color-glass)] text-center backdrop-blur-xl sm:top-[40%] sm:size-40"
               style={{
                 borderColor: mobileAccent,
                 boxShadow: `0 0 80px ${mobileAccent}35`,
@@ -174,6 +178,7 @@ function Skills() {
 
             <div className="absolute left-0 right-0 top-[62%] grid grid-cols-2 gap-3 sm:top-auto sm:bottom-0 sm:grid-cols-4">
               {skillStats.map((stat, index) => {
+                const isSelectedStat = selectedStat === index;
                 const Icon = stat.icon;
 
                 return (
@@ -185,8 +190,13 @@ function Skills() {
                     viewport={viewportOnce}
                     transition={{ delay: index * 0.05 }}
                     whileHover={{ y: -5, scale: 1.03 }}
-                    whileTap={{ scale: 0.97 }}
-                    className="rounded-2xl border border-[var(--color-card-border)] bg-[var(--color-glass)] p-4 text-center backdrop-blur-xl transition duration-300 hover:border-[var(--color-primary)] active:border-[var(--color-primary)]"
+                    whileTap={{ scale: 0.97, y: -4 }}
+                    onClick={() => setSelectedStat(index)}
+                    className={`rounded-2xl border bg-[var(--color-glass)] p-4 text-center backdrop-blur-xl transition duration-300 hover:border-[var(--color-primary)] active:border-[var(--color-primary)] ${
+                      isSelectedStat
+                        ? "border-[var(--color-primary)] shadow-[var(--shadow-card-strong)]"
+                        : "border-[var(--color-card-border)]"
+                    }`}
                   >
                     <Icon
                       size={20}
@@ -215,16 +225,18 @@ function Skills() {
           {skillCategories.map((category, index) => {
             const Icon = category.icon;
             const accent = accentMap[category.accent];
-            const isLinkedHover = hoveredSkill === index;
+            const isLinkedHover =
+              hoveredSkill === index || selectedSkill === index;
 
             return (
               <motion.article
                 key={category.title}
                 variants={fadeUp}
                 whileHover={{ y: -5 }}
-                whileTap={{ scale: 0.99 }}
+                whileTap={{ scale: 0.97, y: -4 }}
+                onClick={() => setSelectedSkill(index)}
                 style={{ "--skill-accent": accent } as React.CSSProperties}
-                className={`glass-card group relative overflow-hidden rounded-[2rem] p-5 transition duration-500 hover:border-[var(--skill-accent)] hover:shadow-[var(--shadow-card-strong)] active:border-[var(--skill-accent)] sm:p-6 ${
+                className={`glass-card group relative overflow-hidden rounded-[2rem] p-5 transition duration-500 hover:border-[var(--skill-accent)] hover:shadow-[var(--shadow-card-strong)] active:border-[var(--skill-accent)] active:shadow-[var(--shadow-card-strong)] sm:p-6 ${
                   isLinkedHover
                     ? "border-[var(--skill-accent)] shadow-[var(--shadow-card-strong)]"
                     : ""
@@ -244,58 +256,60 @@ function Skills() {
                   }`}
                 />
 
-                <div className="relative flex flex-col gap-5 sm:flex-row">
-                  <div
-                    className={`flex size-14 shrink-0 items-center justify-center rounded-2xl bg-[var(--skill-accent)] text-[var(--color-black)] shadow-[0_0_34px_color-mix(in_srgb,var(--skill-accent)_35%,transparent)] transition duration-300 ${
-                      isLinkedHover
-                        ? "scale-110 rotate-3"
-                        : "group-hover:scale-110 group-hover:rotate-3"
-                    }`}
-                  >
-                    <Icon size={25} strokeWidth={1.9} />
-                  </div>
-
-                  <div className="min-w-0 flex-1">
-                    <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                      <div>
-                        <h3 className="text-2xl font-black tracking-tight text-[var(--color-text)]">
-                          {category.title}
-                        </h3>
-
-                        <p className="mt-1 text-sm font-bold text-[var(--skill-accent)]">
-                          {category.subtitle}
-                        </p>
-                      </div>
-
-                      <span className="w-fit rounded-full border border-[var(--skill-accent)] bg-[color-mix(in_srgb,var(--skill-accent)_12%,transparent)] px-3 py-1 text-xs font-black text-[var(--skill-accent)]">
-                        {category.strength}
-                      </span>
+                <div className="relative">
+                  <div className="flex items-start gap-4">
+                    <div
+                      className={`flex size-14 shrink-0 items-center justify-center rounded-2xl bg-[var(--skill-accent)] text-[var(--color-black)] shadow-[0_0_34px_color-mix(in_srgb,var(--skill-accent)_35%,transparent)] transition duration-300 ${
+                        isLinkedHover
+                          ? "scale-110 rotate-3"
+                          : "group-hover:scale-110 group-hover:rotate-3"
+                      }`}
+                    >
+                      <Icon size={25} strokeWidth={1.9} />
                     </div>
 
-                    <p className="mt-4 text-sm leading-7 text-[var(--color-text-soft)]">
-                      {category.description}
-                    </p>
+                    <div className="min-w-0 flex-1">
+                      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                        <div>
+                          <h3 className="text-2xl font-black tracking-tight text-[var(--color-text)]">
+                            {category.title}
+                          </h3>
 
-                    <motion.div
-                      variants={staggerContainer}
-                      initial="hidden"
-                      whileInView="visible"
-                      viewport={viewportOnce}
-                      className="mt-5 flex flex-wrap gap-2"
-                    >
-                      {category.skills.map((skill) => (
-                        <motion.span
-                          key={skill}
-                          variants={fadeUp}
-                          whileHover={{ y: -2, scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                          className="rounded-full border border-[var(--color-card-border)] bg-[var(--color-glass)] px-3 py-1 text-xs font-semibold text-[var(--color-text-soft)] transition duration-300 hover:border-[var(--skill-accent)] hover:bg-[var(--skill-accent)] hover:text-[var(--color-black)] active:border-[var(--skill-accent)] active:bg-[var(--skill-accent)] active:text-[var(--color-black)]"
-                        >
-                          {skill}
-                        </motion.span>
-                      ))}
-                    </motion.div>
+                          <p className="mt-1 text-sm font-bold text-[var(--skill-accent)]">
+                            {category.subtitle}
+                          </p>
+                        </div>
+
+                        <span className="w-fit rounded-full border border-[var(--skill-accent)] bg-[color-mix(in_srgb,var(--skill-accent)_12%,transparent)] px-3 py-1 text-xs font-black text-[var(--skill-accent)]">
+                          {category.strength}
+                        </span>
+                      </div>
+                    </div>
                   </div>
+
+                  <p className="mt-5 text-sm leading-7 text-[var(--color-text-soft)]">
+                    {category.description}
+                  </p>
+
+                  <motion.div
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={viewportOnce}
+                    className="mt-5 flex flex-wrap gap-2"
+                  >
+                    {category.skills.map((skill) => (
+                      <motion.span
+                        key={skill}
+                        variants={fadeUp}
+                        whileHover={{ y: -2, scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="rounded-full border border-[var(--color-card-border)] bg-[var(--color-glass)] px-3 py-1 text-xs font-semibold text-[var(--color-text-soft)] transition duration-300 hover:border-[var(--skill-accent)] hover:bg-[var(--skill-accent)] hover:text-[var(--color-black)] active:border-[var(--skill-accent)] active:bg-[var(--skill-accent)] active:text-[var(--color-black)]"
+                      >
+                        {skill}
+                      </motion.span>
+                    ))}
+                  </motion.div>
                 </div>
               </motion.article>
             );
