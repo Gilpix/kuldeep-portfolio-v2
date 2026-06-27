@@ -66,20 +66,25 @@ function Contact() {
             product execution.
           </p>
 
-          <div className="relative mt-8 flex flex-wrap gap-3">
-            <a href="mailto:your-email@example.com" className="primary-button">
+          <div className="relative z-10 mt-8 flex flex-wrap gap-3">
+            <a
+              href="mailto:kulsinggh@gmail.com?subject=Portfolio Inquiry"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="primary-button"
+            >
               <Mail size={18} />
               Email Me
             </a>
 
             <a
-              href="/resume.pdf"
+              href="/assets/resume/Kuldeep-Singh-Resume.pdf"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="secondary-button"
             >
               <Download size={18} />
-              Download Resume
+              View Resume
             </a>
           </div>
         </div>
