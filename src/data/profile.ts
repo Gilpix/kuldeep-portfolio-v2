@@ -13,7 +13,7 @@ export const profile: Profile = {
   email: "kulsinggh@gmail.com",
   phone: "+1 (514) 292-1514",
   summary:
-    "Full Stack Developer building modern web applications with React, TypeScript, Node.js, Express, PostgreSQL, MongoDB, and AWS.",
+    "Building modern business applications, CMS platforms, and custom software solutions from concept to deployment.",
   highlights: [
     "7+ years of software development experience",
     "React, TypeScript, Node.js, Express, and AWS",

@@ -203,6 +203,7 @@ a {
 .soft-card {
   border: 1px solid var(--color-card-border);
   background: var(--color-surface);
+  /* background: rgb(from var(--color-primary) r g b / 0.001); */
   box-shadow: var(--shadow-card);
 }
 

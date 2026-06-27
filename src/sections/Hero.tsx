@@ -13,12 +13,15 @@ import SocialLink from "../components/ui/SocialLink";
 import { profile } from "../data/profile";
 import { fadeUp, staggerContainer, zoomIn } from "../utils/animations";
 
+// "Full Stack Developer",
+// "Software Developer",
+// "Frontend Developer",
+// "Backend Developer",
+// "Founder / CEO",
 const heroRoles = [
   "Full Stack Developer",
-  "Software Developer",
-  "Frontend Developer",
-  "Backend Developer",
-  "Founder / CEO",
+  "Application Developer",
+  "Founder & CEO",
 ];
 
 /**
@@ -61,11 +64,15 @@ function useTypewriter(words: string[]) {
     return () => window.clearTimeout(timer);
   }, [isDeleting, letterCount, wordIndex, words]);
 
-  return words[wordIndex].slice(0, letterCount);
+  return {
+    currentWord: words[wordIndex],
+    letterCount,
+    isDeleting,
+  };
 }
 
 function Hero() {
-  const typedRole = useTypewriter(heroRoles);
+  const { currentWord, letterCount, isDeleting } = useTypewriter(heroRoles);
 
   return (
     <section
@@ -97,9 +104,33 @@ function Hero() {
 
           <motion.h2
             variants={fadeUp}
-            className="mt-5 min-h-[3.5rem] text-3xl font-black leading-tight tracking-[-0.03em] bg-gradient-to-r from-white via-white to-slate-300 bg-clip-text text-transparent sm:text-4xl lg:text-5xl"
+            className="mt-5 min-h-[3.5rem] text-3xl font-black leading-tight tracking-[-0.03em] text-white sm:text-4xl lg:text-5xl"
           >
-            <span>{typedRole}</span>
+            {currentWord
+              .slice(0, letterCount)
+              .split("")
+              .map((letter, index) => {
+                const isWordComplete = letterCount === currentWord.length;
+
+                const activeLetterIndex =
+                  isWordComplete && !isDeleting ? -1 : letterCount - 1;
+
+                const isActiveLetter = index === activeLetterIndex;
+
+                return (
+                  <span
+                    key={`${currentWord}-${index}`}
+                    className={
+                      isActiveLetter
+                        ? "text-[var(--color-primary)]"
+                        : "text-white"
+                    }
+                  >
+                    {letter}
+                  </span>
+                );
+              })}
+
             <span className="ml-1 inline-block animate-pulse font-normal text-[var(--color-primary)]">
               |
             </span>
@@ -114,14 +145,16 @@ function Hero() {
 
           <motion.div variants={fadeUp} className="mt-8 flex flex-wrap gap-4">
             <a href="#projects" className="primary-button">
-              View Projects <ArrowDown size={18} />
+              View My Work
+              <ArrowDown size={18} />
             </a>
 
             <a
               href="#contact"
               className="inline-flex items-center gap-2 rounded-full border border-white/60 bg-white/5 px-6 py-3 text-sm font-bold !text-white transition hover:-translate-y-0.5 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
             >
-              Contact Me <Download size={18} />
+              Get In Touch
+              <Download size={18} />
             </a>
           </motion.div>
 

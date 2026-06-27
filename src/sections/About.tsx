@@ -15,15 +15,15 @@ import { staggerContainer, viewportOnce } from "../utils/animations";
 
 const aboutStats = [
   { value: "7+", label: "Years building software" },
-  { value: "20+", label: "Projects across web, CMS, and apps" },
-  { value: "Full", label: "Frontend, backend, cloud ownership" },
+  { value: "20+", label: "Projects across web & CMS" },
+  { value: "Full", label: "Frontend, backend & cloud" },
 ];
 
 const focusAreas = [
   {
-    title: "Product Thinking",
+    title: "Practical Thinking",
     description:
-      "I think beyond screens and code. I care about what the product solves, how users move through it, and how each feature supports the business.",
+      "I look beyond screens and code to understand the problem, the users, and how each feature supports real business needs.",
     icon: Rocket,
   },
   {
@@ -56,9 +56,9 @@ function About() {
 
       <SectionHeading
         label="About Me"
-        title="I build products with"
+        title="I build software with"
         accent="purpose."
-        description="I work at the intersection of engineering, product thinking, and clean execution. The goal is simple: build things that look good, work well, and are easy to grow."
+        description="I combine engineering, product thinking, and business understanding to build software that is practical, reliable, and ready to grow."
         align="left"
         size="lg"
       />
@@ -66,7 +66,6 @@ function About() {
       <div className="mt-16 grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
         <ScrollReveal direction="left" className="relative">
           <div className="group relative">
-            {/* Glow changes only visually. It does not affect layout. */}
             <div className="absolute -inset-4 rounded-[2.5rem] bg-[var(--color-primary)]/20 blur-2xl transition duration-500 group-hover:bg-[var(--color-primary)]/30" />
 
             <div className="soft-card relative overflow-hidden rounded-[2rem] p-4">
@@ -80,14 +79,14 @@ function About() {
                 />
               </div>
 
-              <div className="absolute bottom-8 left-8 right-8 rounded-3xl border border-[var(--color-primary)]/40 bg-[var(--color-card)] p-4 text-[var(--color-text)] shadow-xl backdrop-blur-xl transition duration-300 group-hover:border-[var(--color-primary)]">
+              <div className="absolute bottom-8 left-8 right-8 rounded-3xl border border-[var(--color-primary)]/50 bg-[var(--color-card)] p-4 text-[var(--color-text)] shadow-2xl backdrop-blur-3xl transition duration-300 group-hover:border-[var(--color-primary)]">
                 <p className="text-sm font-bold text-[var(--color-primary)]">
                   Founder mindset. Developer execution.
                 </p>
 
                 <p className="mt-2 text-sm leading-6 text-[var(--color-text-soft)]">
-                  Building modern web products with React, TypeScript, Node.js,
-                  databases, and cloud services.
+                  Building business applications, CMS platforms, and custom web
+                  solutions with modern full-stack technologies.
                 </p>
               </div>
             </div>
@@ -98,20 +97,20 @@ function About() {
           <div className="space-y-8">
             <div className="space-y-5">
               <h3 className="text-3xl font-extrabold tracking-tight text-[var(--color-text)] sm:text-4xl">
-                More than a developer portfolio.
+                Full Stack Developer focused on solving real business problems.
               </h3>
 
               <p className="text-base leading-8 text-[var(--color-text-soft)] sm:text-lg">
-                I’m a Full Stack Developer based in Ontario, Canada, with
-                experience building CMS platforms, e-commerce systems,
-                legal-tech tools, internal dashboards, cloud APIs, and
-                production-ready web applications.
+                I’m a Full Stack Developer with experience building business
+                applications, CMS platforms, legal-tech systems, workflow
+                automation tools, cloud APIs, and production-ready web
+                solutions.
               </p>
 
               <p className="text-base leading-8 text-[var(--color-text-soft)] sm:text-lg">
-                My recent work focuses on React, TypeScript, RTK Query, Node.js,
-                Express, PostgreSQL, MongoDB, AWS Lambda, API Gateway, Amplify,
-                S3, RDS, and clean deployment workflows.
+                My work focuses on translating real business requirements into
+                reliable software using React, TypeScript, Node.js, databases,
+                AWS services, and clean deployment workflows.
               </p>
             </div>
 
@@ -131,10 +130,10 @@ function About() {
                   }}
                   className="glass-card group rounded-3xl p-5 transition duration-300 hover:-translate-y-1 hover:border-[var(--color-primary)] hover:!bg-[var(--color-blue-soft)]"
                 >
-                  <p className="text-3xl font-black text-[var(--color-primary)] transition duration-300 group-hover:text-white">
+                  <p className="text-3xl font-black text-[var(--color-primary)] transition duration-300">
                     {stat.value}
                   </p>
-                  <p className="mt-2 text-sm leading-6 text-[var(--color-text-soft)] transition duration-300 group-hover:text-white">
+                  <p className="mt-2 text-sm leading-6 text-[var(--color-text-soft)] transition duration-300 group-hover:text-[var(--color-text)]">
                     {stat.label}
                   </p>
                 </motion.div>
