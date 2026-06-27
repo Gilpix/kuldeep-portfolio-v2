@@ -157,6 +157,13 @@ a {
   padding-block: var(--section-padding-y);
 }
 
+@media (max-width: 639px) {
+  .section-padding {
+    padding-top: 5rem;
+    padding-bottom: 3.5rem;
+  }
+}
+
 .section-label {
   font-size: 0.875rem;
   font-weight: 700;

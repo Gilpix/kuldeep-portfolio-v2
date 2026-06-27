@@ -75,7 +75,7 @@ function Experience() {
       <SectionHeading
         label="Experience"
         title="From code to"
-        accent="leadership."
+        accent="ownership."
         description="A timeline of product work, engineering ownership, cloud systems, and business-focused technical leadership."
         align="left"
         size="lg"
@@ -192,7 +192,7 @@ function Experience() {
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={viewportOnce}
+            viewport={{ once: true, amount: 0.05, margin: "0px 0px -10% 0px" }}
             className="space-y-16"
           >
             {experiences.map((experience, index) => {
@@ -296,6 +296,35 @@ function Experience() {
                 </motion.article>
               );
             })}
+            <motion.article
+              variants={fadeUp}
+              className="relative grid min-h-[10rem] grid-cols-[3rem_1fr] gap-8"
+            >
+              <div className="relative flex justify-center">
+                <div className="size-4 rounded-full border-4 border-[var(--section-bg-page)] bg-[var(--color-primary)]/80 shadow-[0_0_24px_rgba(244,180,0,0.25)]" />
+              </div>
+
+              <div className="rounded-[1.5rem] border border-dashed border-[var(--color-primary)]/35 bg-[var(--color-glass)] p-5">
+                <p className="text-xs font-black uppercase tracking-[0.24em] text-[var(--color-primary)]">
+                  More Experience
+                </p>
+
+                <p className="mt-3 max-w-2xl text-sm leading-7 text-[var(--color-text-soft)]">
+                  This timeline highlights selected roles. For complete work
+                  history, early experience, and additional project details,
+                  please view my resume.
+                </p>
+
+                <a
+                  href="/resume/Kuldeep-Singh-Resume.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-4 inline-flex text-sm font-black text-[var(--color-primary)] transition hover:translate-x-1"
+                >
+                  View full resume →
+                </a>
+              </div>
+            </motion.article>
           </motion.div>
         </div>
       </div>
@@ -368,6 +397,26 @@ function Experience() {
             </div>
           </motion.article>
         ))}
+        <div className="rounded-[1.5rem] border border-dashed border-[var(--color-primary)]/35 bg-[var(--color-glass)] p-5">
+          <p className="text-xs font-black uppercase tracking-[0.24em] text-[var(--color-primary)]">
+            More Experience
+          </p>
+
+          <p className="mt-3 text-sm leading-7 text-[var(--color-text-soft)]">
+            This timeline highlights selected roles. For complete work history,
+            early experience, and additional project details, please view my
+            resume.
+          </p>
+
+          <a
+            href="/resume/Kuldeep-Singh-Resume.pdf"
+            target="_blank"
+            rel="noreferrer"
+            className="mt-4 inline-flex text-sm font-black text-[var(--color-primary)]"
+          >
+            View full resume →
+          </a>
+        </div>
       </div>
     </SectionWrapper>
   );
