@@ -245,9 +245,10 @@ a {
   transition: 0.25s ease;
 }
 
-.primary-button:hover {
+.primary-button:hover,
+.primary-button:active {
   background: var(--color-primary-hover);
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(0.97);
 }
 
 .secondary-button {
@@ -263,7 +264,8 @@ a {
   transition: 0.25s ease;
 }
 
-.secondary-button:hover {
+.secondary-button:hover,
+.secondary-button:active {
   border-color: var(--color-primary);
   color: var(--color-primary);
   transform: translateY(-2px);

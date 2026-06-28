@@ -152,7 +152,7 @@ function Hero() {
 
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-full border border-white/60 bg-white/5 px-6 py-3 text-sm font-bold !text-white transition hover:-translate-y-0.5 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+              className="inline-flex items-center gap-2 rounded-full border border-white/60 bg-white/5 px-6 py-3 text-sm font-bold !text-white transition duration-200 hover:-translate-y-0.5 hover:border-[var(--color-primary)] hover:!text-[var(--color-primary)] active:scale-95 active:bg-[var(--color-primary)] active:border-[var(--color-primary)] active:!text-[var(--color-black)]"
             >
               Get In Touch
               <Download size={18} />
