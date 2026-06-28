@@ -68,18 +68,37 @@ function Navbar() {
   return (
     <>
       {/* Mobile / Tablet Navbar */}
-      <header className="fixed left-0 top-0 z-[999] w-full border-b border-white/10 bg-[#020617]/95 px-4 py-4 text-white backdrop-blur-xl lg:hidden">
+      <header className="fixed left-0 top-0 z-[999] w-full border-b border-white/10 bg-[#020617]/95 px-4 py-3 text-white backdrop-blur-xl lg:hidden">
         <div className="mx-auto flex max-w-6xl items-center justify-between">
           <a
             href="#home"
             onClick={handleMobileLinkClick}
-            className="text-4xl font-black uppercase tracking-[0.04em] !text-[var(--color-white)]"
+            className="group leading-none"
+            aria-label="Go to home section"
           >
-            KS
+            <span className="block text-lg font-black tracking-tight !text-white transition group-active:!text-[var(--color-primary)]">
+              Kuldeep
+            </span>
+            <span className="mt-1 block text-[10px] font-bold uppercase tracking-[0.22em] text-white/45 transition group-active:text-[var(--color-primary)]">
+              Full Stack Developer
+            </span>
           </a>
 
-          <div className="flex items-center gap-3">
-            <div className="[&>*]:!static [&>*]:!right-auto [&>*]:!top-auto [&>*]:!translate-x-0 [&>*]:!translate-y-0">
+          <div className="flex items-center gap-4">
+            <div
+              className="
+  [&>*]:!static
+  [&>*]:!right-auto
+  [&>*]:!top-auto
+  [&>*]:!translate-x-0
+  [&>*]:!translate-y-0
+  [&_button]:!size-9
+  [&_button]:!border-0
+  [&_button]:!bg-transparent
+  [&_button]:!shadow-none
+  [&_button]:!text-white
+  "
+            >
               <ThemeToggle />
             </div>
 
@@ -88,16 +107,16 @@ function Navbar() {
               aria-label="Toggle navigation menu"
               aria-expanded={isMenuOpen}
               onClick={() => setIsMenuOpen((current) => !current)}
-              className="flex size-12 items-center justify-center rounded-full border border-white/20 bg-white/10 !text-white shadow-lg shadow-black/20 transition hover:border-[var(--color-primary)] hover:!text-[var(--color-primary)]"
+              className="flex size-9 items-center justify-center border-0 bg-transparent !text-white transition hover:!text-[var(--color-primary)] active:scale-95 active:!text-[var(--color-primary)]"
             >
-              {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
 
         {isMenuOpen && (
-          <nav className="mx-auto mt-4 max-w-6xl rounded-2xl border border-white/10 bg-[#020617]/98 p-3 shadow-2xl backdrop-blur-xl">
-            <ul className="grid gap-2 sm:grid-cols-2">
+          <nav className="-mx-4 mt-3 border-t border-white/10 bg-[#020617]/98 px-4 py-3 shadow-2xl backdrop-blur-xl">
+            <ul className="grid gap-2">
               {navItems.map((item) => {
                 const Icon = item.icon;
                 const sectionId = item.href.replace("#", "");
@@ -108,13 +127,13 @@ function Navbar() {
                     <a
                       href={item.href}
                       onClick={handleMobileLinkClick}
-                      className={`flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-bold transition ${
+                      className={`flex w-full items-center gap-4 rounded-xl px-4 py-3.5 text-[15px] font-black transition active:scale-[0.98] ${
                         isActive
                           ? "bg-[var(--color-primary)] !text-[var(--color-black)]"
-                          : "!text-white hover:bg-white/10 hover:!text-[var(--color-primary)]"
+                          : "!text-white hover:bg-white/10 hover:!text-[var(--color-primary)] active:bg-white/10 active:!text-[var(--color-primary)]"
                       }`}
                     >
-                      <Icon size={18} />
+                      <Icon size={20} strokeWidth={2} />
                       {item.label}
                     </a>
                   </li>
@@ -124,6 +143,7 @@ function Navbar() {
           </nav>
         )}
       </header>
+
       {/* Desktop Floating Side Navbar */}
       <header className="fixed left-4 top-1/2 z-50 hidden -translate-y-1/2 lg:block">
         <nav aria-label="Primary navigation">
