@@ -8,7 +8,8 @@ import { motion } from "framer-motion";
 import { ArrowDown, Download } from "lucide-react";
 import { useEffect, useState } from "react";
 
-import profileImage from "../assets/images/profile.webp";
+import profileImage from "../assets/images/profile-transparent.webp";
+
 import SocialLink from "../components/ui/SocialLink";
 import { profile } from "../data/profile";
 import { fadeUp, staggerContainer, zoomIn } from "../utils/animations";
@@ -171,16 +172,21 @@ function Hero() {
           animate="visible"
           className="flex justify-center lg:justify-end"
         >
-          <div className="relative size-56 rounded-full border-[12px] border-[var(--color-primary)] bg-[var(--color-black)] shadow-2xl shadow-black/40 sm:size-72">
-            <div className="absolute -inset-6 rounded-full border border-[var(--color-primary)]/30" />
-            <div className="absolute -inset-12 rounded-full border border-[var(--color-primary)]/10" />
+          <motion.div
+            whileHover={{ scale: 0.96 }}
+            whileTap={{ scale: 0.94 }}
+            className="group relative mt-6 size-52 cursor-pointer rounded-full border-[2px] border-[var(--color-primary)] bg-[var(--color-primary)] shadow-2xl shadow-black/40 sm:mt-10 sm:size-72 lg:mt-0"
+          >
+            <span className="absolute -inset-4 rounded-full border border-[var(--color-primary)]/60 transition duration-500 group-hover:scale-110 group-hover:opacity-40 group-active:scale-125 group-active:opacity-20" />
+            <span className="absolute -inset-9 rounded-full border border-[var(--color-primary)]/35 transition duration-700 group-hover:scale-110 group-hover:opacity-30 group-active:scale-150 group-active:opacity-10" />
+            <span className="absolute -inset-14 rounded-full border border-[var(--color-primary)]/20 transition duration-1000 group-hover:scale-110 group-hover:opacity-20 group-active:scale-[1.7] group-active:opacity-0" />
 
-            <img
+            <motion.img
               src={profileImage}
               alt="Kuldeep Singh"
-              className="relative z-10 size-full rounded-full object-cover"
+              className="relative z-10 size-full rounded-full object-cover transition duration-500 group-hover:scale-105 group-active:scale-95"
             />
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

@@ -140,7 +140,25 @@ a {
 }
 
 .hero-gradient {
-  background: var(--hero-gradient);
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    transparent 52%,
+    rgba(244, 180, 0, 0.72) 52%,
+    rgba(138, 100, 0, 0.9) 100%
+  );
+}
+
+@media (max-width: 768px) {
+  .hero-gradient {
+    background: linear-gradient(
+      135deg,
+      transparent 0%,
+      transparent 65%,
+      rgba(244, 180, 0, 0.72) 65%,
+      rgba(138, 100, 0, 0.9) 100%
+    );
+  }
 }
 
 .hero-overlay {
