@@ -66,7 +66,7 @@ function About() {
       <div className="mt-16 grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
         <ScrollReveal direction="left" className="relative">
           <div className="group relative">
-            <div className="absolute -inset-4 rounded-[2.5rem] bg-[var(--color-primary)]/20 blur-2xl transition duration-500 group-hover:bg-[var(--color-primary)]/30" />
+            <div className="absolute -inset-4 rounded-[2.5rem] bg-[var(--color-primary)]/20 blur-2xl transition duration-500 group-hover:bg-[var(--color-primary)]/30 group-active:bg-[var(--color-primary)]/30" />
 
             <div className="soft-card relative overflow-hidden rounded-[2rem] p-4">
               <div className="overflow-hidden rounded-[1.5rem]">
@@ -74,12 +74,13 @@ function About() {
                   src={profileImage}
                   alt="Kuldeep Singh"
                   whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.98 }}
                   transition={{ duration: 0.45, ease: "easeOut" }}
-                  className="h-[420px] w-full rounded-[1.5rem] object-cover object-top"
+                  className="h-[340px] sm:h-[420px] w-full rounded-[1.5rem] object-cover object-top"
                 />
               </div>
 
-              <div className="absolute bottom-8 left-8 right-8 rounded-3xl border border-[var(--color-primary)]/50 bg-[var(--color-card)] p-4 text-[var(--color-text)] shadow-2xl backdrop-blur-3xl transition duration-300 group-hover:border-[var(--color-primary)]">
+              <div className="absolute bottom-8 left-8 right-8 rounded-3xl border border-[var(--color-primary)]/50 bg-[var(--color-card)] p-4 text-[var(--color-text)] shadow-2xl backdrop-blur-3xl transition duration-300 group-hover:border-[var(--color-primary)] group-active:border-[var(--color-primary)]">
                 <p className="text-sm font-bold text-[var(--color-primary)]">
                   Founder mindset. Developer execution.
                 </p>
@@ -128,12 +129,12 @@ function About() {
                     hidden: { opacity: 0, y: 22 },
                     visible: { opacity: 1, y: 0 },
                   }}
-                  className="glass-card group rounded-3xl p-5 transition duration-300 hover:-translate-y-1 hover:border-[var(--color-primary)] hover:!bg-[var(--color-blue-soft)]"
+                  className="glass-card group rounded-3xl p-5 transition duration-300 hover:-translate-y-1 hover:border-[var(--color-primary)] hover:!bg-[var(--color-blue-soft)] active:scale-[0.98] active:-translate-y-1 active:border-[var(--color-primary)] active:!bg-[var(--color-blue-soft)]"
                 >
                   <p className="text-3xl font-black text-[var(--color-primary)] transition duration-300">
                     {stat.value}
                   </p>
-                  <p className="mt-2 text-sm leading-6 text-[var(--color-text-soft)] transition duration-300 group-hover:text-[var(--color-text)]">
+                  <p className="mt-2 text-sm leading-6 text-[var(--color-text-soft)] transition duration-300 group-hover:text-[var(--color-text)] group-active:text-[var(--color-text)]">
                     {stat.label}
                   </p>
                 </motion.div>
@@ -155,25 +156,36 @@ function About() {
 
           return (
             <motion.article
+              whileTap={{ scale: 0.98 }}
               key={area.title}
               variants={{
                 hidden: { opacity: 0, y: 24 },
                 visible: { opacity: 1, y: 0 },
               }}
-              className="glass-card group relative overflow-hidden rounded-[2rem] p-6 transition duration-500 hover:-translate-y-1 hover:border-[var(--color-primary)]"
+              className="glass-card group relative overflow-hidden rounded-[2rem] p-6 transition duration-500 hover:-translate-y-1 hover:border-[var(--color-primary)] active:scale-[0.98] active:-translate-y-1 active:border-[var(--color-primary)]"
             >
-              <div className="absolute left-6 top-6 size-14 rounded-2xl bg-[var(--color-primary)] transition-all duration-500 group-hover:left-0 group-hover:top-0 group-hover:size-full group-hover:rounded-[2rem]" />
+              <div
+                className="absolute left-6 top-6 size-14 rounded-2xl bg-[var(--color-primary)] transition-all duration-500 group-hover:left-0
+                  group-hover:top-0
+                  group-hover:size-full
+                  group-hover:rounded-[2rem]
+
+                  group-active:left-0
+                  group-active:top-0
+                  group-active:size-full
+                  group-active:rounded-[2rem]"
+              />
 
               <div className="relative z-10">
-                <div className="mb-5 inline-flex size-14 items-center justify-center rounded-2xl text-[var(--color-black)] transition duration-500 group-hover:scale-110">
+                <div className="mb-5 inline-flex size-12 sm:size-14 items-center justify-center rounded-2xl text-[var(--color-black)] transition duration-500 group-hover:scale-110 group-active:scale-110">
                   <Icon size={25} strokeWidth={1.8} />
                 </div>
 
-                <h3 className="text-xl font-bold text-[var(--color-text)] transition duration-300 group-hover:text-[var(--color-black)]">
+                <h3 className="text-xl font-bold text-[var(--color-text)] transition duration-300 group-hover:text-[var(--color-black)] group-active:text-[var(--color-black)]">
                   {area.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-7 text-[var(--color-text-soft)] transition duration-300 group-hover:text-[var(--color-black)]">
+                <p className="mt-3 text-sm leading-7 text-[var(--color-text-soft)] transition duration-300 group-hover:text-[var(--color-black)] group-active:text-[var(--color-black)]">
                   {area.description}
                 </p>
               </div>
