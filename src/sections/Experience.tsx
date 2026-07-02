@@ -26,6 +26,9 @@ function Experience() {
   const [activeIndex, setActiveIndex] = useState(0);
   const cardRefs = useRef<Array<HTMLElement | null>>([]);
 
+  const [expandedIndex, setExpandedIndex] = useState(0);
+  const mobileCardRefs = useRef<(HTMLElement | null)[]>([]);
+
   const activeExperience = experiences[activeIndex];
 
   useEffect(() => {
@@ -333,6 +336,9 @@ function Experience() {
         {experiences.map((experience, index) => (
           <motion.article
             key={`${experience.company}-${experience.period}-mobile`}
+            ref={(node) => {
+              mobileCardRefs.current[index] = node;
+            }}
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -371,30 +377,58 @@ function Experience() {
               {experience.description}
             </p>
 
-            <div className="mt-5 grid gap-3">
-              {experience.highlights.map((highlight) => (
-                <div
-                  key={highlight}
-                  className="flex gap-3 rounded-2xl border border-[var(--color-card-border)] bg-[var(--color-glass)] p-3 transition duration-300 active:border-[var(--color-primary)]"
-                >
-                  <span className="mt-1 text-[var(--color-primary)]">↗</span>
-                  <p className="text-sm leading-6 text-[var(--color-text-soft)]">
-                    {highlight}
-                  </p>
-                </div>
-              ))}
-            </div>
+            <button
+              type="button"
+              onClick={() => {
+                const isOpening = expandedIndex !== index;
 
-            <div className="mt-6 flex flex-wrap gap-2">
-              {experience.technologies.map((technology) => (
-                <span
-                  key={technology}
-                  className="rounded-full border border-[var(--color-card-border)] bg-[var(--color-glass)] px-3 py-1 text-xs font-semibold text-[var(--color-text-soft)] transition duration-300 active:border-[var(--color-primary)] active:bg-[var(--color-primary)] active:text-[var(--color-black)]"
-                >
-                  {technology}
-                </span>
-              ))}
-            </div>
+                setExpandedIndex(isOpening ? index : -1);
+
+                if (isOpening) {
+                  setTimeout(() => {
+                    mobileCardRefs.current[index]?.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
+                  }, 150);
+                }
+              }}
+              className="mt-5 ml-auto flex w-fit items-center gap-2 text-sm font-black text-[var(--color-primary)] hover:opacity-80 active:scale-95"
+            >
+              {expandedIndex === index ? "Show Less ↑" : "Show Details ↓"}
+            </button>
+
+            {expandedIndex === index && (
+              <>
+                <div className="mt-5 grid gap-3">
+                  {experience.highlights.map((highlight) => (
+                    <div
+                      key={highlight}
+                      className="flex gap-3 rounded-2xl border border-[var(--color-card-border)] bg-[var(--color-glass)] p-3 transition duration-300 active:border-[var(--color-primary)]"
+                    >
+                      <span className="mt-1 text-[var(--color-primary)]">
+                        ↗
+                      </span>
+
+                      <p className="text-sm leading-6 text-[var(--color-text-soft)]">
+                        {highlight}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {experience.technologies.map((technology) => (
+                    <span
+                      key={technology}
+                      className="rounded-full border border-[var(--color-card-border)] bg-[var(--color-glass)] px-3 py-1 text-xs font-semibold text-[var(--color-text-soft)] transition duration-300 active:scale-95 active:border-[var(--color-primary)] active:bg-[var(--color-primary)] active:text-[var(--color-black)]"
+                    >
+                      {technology}
+                    </span>
+                  ))}
+                </div>
+              </>
+            )}
           </motion.article>
         ))}
         <div className="rounded-[1.5rem] border border-dashed border-[var(--color-primary)]/35 bg-[var(--color-glass)] p-5">
