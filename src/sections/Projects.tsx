@@ -158,23 +158,23 @@ function Projects() {
                 variants={fadeUp}
                 type="button"
                 onClick={() => setSelectedProject(project)}
-                className="group relative overflow-hidden rounded-[1.6rem] border border-white/15 bg-[#060a16] p-0 text-left shadow-[0_30px_100px_rgba(0,0,0,0.35)] transition duration-500 hover:-translate-y-1 hover:border-[var(--color-primary)] hover:shadow-[var(--shadow-card-strong)] sm:rounded-[2rem]"
+                className="group relative overflow-hidden rounded-[1.6rem] border border-[var(--featured-project-border)] bg-[var(--featured-project-bg)] p-0 text-left shadow-[var(--featured-project-shadow)] transition duration-500 hover:-translate-y-1 hover:border-[var(--color-primary)] hover:shadow-[var(--shadow-card-strong)] sm:rounded-[2rem]"
               >
-                <div className="relative overflow-hidden rounded-[1.35rem] bg-[#050814] px-2 pt-8 sm:rounded-[1.7rem] sm:px-3 sm:pt-10 lg:pt-12">
+                <div className="relative overflow-hidden rounded-[1.35rem] bg-[var(--featured-project-media-bg)] px-2 pt-8 sm:rounded-[1.7rem] sm:px-3 sm:pt-10 lg:pt-12">
                   <img
                     src={project.image}
                     alt={project.title}
                     className="h-[24rem] w-full rounded-t-[1rem] object-contain object-top transition duration-700 group-hover:scale-[1.015] sm:h-[29rem] lg:h-[28rem]"
                   />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#050814] via-[#050814]/42 to-transparent" />
-                  <div className="absolute inset-x-0 bottom-0 h-[72%] bg-gradient-to-t from-[#050814] via-[#050814]/88 to-transparent" />
+                  <div className="featured-project-image-overlay absolute inset-0" />
+                  <div className="featured-project-content-overlay absolute inset-x-0 bottom-0 h-[72%]" />
 
-                  <div className="absolute left-4 top-4 z-10 sm:left-5 sm:top-5">
+                  <div className="absolute left-4 top-1 z-10 sm:left-5 sm:top-3">
                     <span
                       className={`inline-flex rounded-full border px-2.5 py-1 text-[0.58rem] font-black uppercase tracking-[0.1em] backdrop-blur-xl sm:px-3 sm:py-1.5 sm:text-[0.68rem] ${
                         isWebsite
-                          ? "border-[var(--color-primary)]/70 bg-black/25 text-[var(--color-primary)]"
+                          ? "border-[var(--color-primary)]/70 bg-[var(--color-navy)] text-[var(--color-primary)]"
                           : "border-[var(--color-primary)] bg-[var(--color-primary)] text-[var(--color-black)]"
                       }`}
                     >
@@ -183,15 +183,15 @@ function Projects() {
                   </div>
 
                   <div className="absolute bottom-0 left-0 right-0 z-10 px-4 pb-4 sm:px-6 sm:pb-6">
-                    <h3 className="text-2xl font-black tracking-tight text-white sm:text-4xl">
+                    <h3 className="text-2xl font-black tracking-tight text-[var(--featured-project-title)] sm:text-4xl">
                       {project.title}
                     </h3>
 
-                    <p className="mt-2 max-w-xl text-xs leading-5 text-slate-200 sm:mt-3 sm:text-base sm:leading-6">
+                    <p className="mt-2 max-w-xl text-xs leading-5 text-[var(--featured-project-text)] sm:mt-3 sm:text-base sm:leading-6">
                       {project.subtitle}
                     </p>
 
-                    <div className="mt-4 h-px w-full bg-white/16 sm:mt-7" />
+                    <div className="mt-4 h-px w-full bg-[var(--featured-project-divider)] sm:mt-7" />
 
                     <div className="mt-4 grid grid-cols-3 gap-1 sm:mt-6 sm:gap-2">
                       {metrics.map((metric, index) => {
@@ -204,7 +204,7 @@ function Projects() {
                             whileTap={{ scale: 0.97 }}
                             className={`flex min-w-0 items-center gap-1.5 px-1 sm:gap-3 sm:px-2 ${
                               index !== metrics.length - 1
-                                ? "border-r border-white/14"
+                                ? "border-r border-[var(--featured-project-divider)]"
                                 : ""
                             }`}
                           >
@@ -221,7 +221,7 @@ function Projects() {
                                 {metric.value}
                               </p>
 
-                              <p className="mt-1 text-[0.48rem] font-black uppercase tracking-[0.08em] text-slate-300 sm:mt-2 sm:text-[0.65rem] sm:tracking-[0.14em]">
+                              <p className="mt-1 text-[0.48rem] font-black uppercase tracking-[0.08em] text-[var(--featured-project-metric-text)] sm:mt-2 sm:text-[0.65rem] sm:tracking-[0.14em]">
                                 {metric.label}
                               </p>
                             </div>
@@ -304,7 +304,7 @@ function Projects() {
                       whileTap={{ scale: 0.95 }}
                       className="rounded-full border border-[var(--color-card-border)] bg-[var(--color-glass)] px-3 py-1 text-xs font-medium text-[var(--color-text-soft)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-[var(--color-black)]"
                     >
-                      {tech}ssss
+                      {tech}
                     </motion.span>
                   ))}
                 </motion.div>
