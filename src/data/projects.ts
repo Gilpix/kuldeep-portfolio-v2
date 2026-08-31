@@ -6,6 +6,13 @@
 
 import { projectImages } from "../assets/images/projects";
 
+import foodBuddySrs from "../assets/documents/projects/food-buddy-srs.pdf";
+import lendSystemSrs from "../assets/documents/projects/lend-system.pdf";
+import shareExpenseFlowDiagram from "../assets/documents/projects/share-expense-flow-diagram.pdf";
+import shareExpensesPresentation from "../assets/documents/projects/share-expenses-presentation.pdf";
+import tekhubMobilePresentation from "../assets/documents/projects/tekhub-mobile-presentation.pdf";
+import travelWithUsScreenFlow from "../assets/documents/projects/travel-with-us.pdf";
+
 export type ProjectCategory = "web" | "mobile" | "design" | "other";
 
 export type ArchiveCategory = "web" | "mobile" | "learning";
@@ -61,15 +68,15 @@ export const projects: Project[] = [
     metrics: [
       { value: "1M+", label: "App Downloads" },
       { value: "CMS", label: "Platform" },
-      { value: "Team", label: "Product" },
+      { value: "AWS", label: "Serverless" },
     ],
     overview:
-      "An enterprise content management system built for Top Parent, a parent-child education mobile app with 1M+ downloads. The CMS supported content workflows, backend APIs, reusable frontend modules, and production deployment processes.",
+      "An enterprise serverless content management platform developed for Top Parent, a parent-child education mobile app with 1M+ downloads. I worked across frontend, backend APIs, content workflows, cloud services, media handling, and production delivery.",
     highlights: [
-      "Developed CMS features using React, Node.js, Express, and MongoDB.",
-      "Implemented reusable React components and RTK Query based data flow.",
-      "Worked with AWS Lambda, Route53, Amplify, Swagger, Docker, and deployment workflows.",
-      "Improved maintainability through structured code, API documentation, and modular frontend patterns.",
+      "Developed CMS features and reusable frontend modules using React, Redux Toolkit, RTK Query, and modern component patterns.",
+      "Built and integrated Node.js APIs with AWS Lambda and designed MongoDB schemas for scalable content workflows.",
+      "Configured AWS services including Amplify, Route 53, and S3 for deployment, domain routing, and secure media storage.",
+      "Implemented authentication, documented APIs using Swagger, and contributed to performance optimization, testing, and CI/CD workflows.",
     ],
     technologies: [
       "React",
@@ -79,16 +86,18 @@ export const projects: Project[] = [
       "RTK Query",
       "Redux Toolkit",
       "AWS Lambda",
+      "Amazon S3",
       "Amplify",
+      "Route 53",
       "Swagger",
-      "Docker",
+      "Jest",
     ],
     links: [],
   },
   {
     id: "brilcs-website",
     title: "BRILCS Website",
-    subtitle: "Premium corporate website for BRILCS",
+    subtitle: "Corporate website with CMS, SEO, and production infrastructure",
     category: "web",
     featured: false,
     badge: "Featured Project",
@@ -96,25 +105,30 @@ export const projects: Project[] = [
     images: [projectImages.brilcsWebsite],
     role: "Founder / Full Stack Developer",
     metrics: [
-      { value: "Live", label: "Website" },
-      { value: "SEO", label: "Ready" },
+      { value: "Live", label: "Production" },
+      { value: "SEO", label: "Optimized" },
       { value: "CMS", label: "Integrated" },
     ],
     overview:
-      "A modern corporate website built for BRILCS with responsive layouts, polished UI, CMS-ready content sections, and production deployment planning.",
+      "A production corporate platform designed and developed for BRIL Consultancy Services, combining a modern React frontend with CMS-driven content, API integrations, technical SEO, and production infrastructure.",
     highlights: [
-      "Built a premium responsive interface for desktop, tablet, and mobile.",
-      "Integrated content-ready sections for insights, careers, reports, and services.",
-      "Focused on performance, SEO structure, reusable components, and brand consistency.",
+      "Designed and developed a responsive React and TypeScript interface across services, insights, careers, company, and other business sections.",
+      "Integrated CMS-backed APIs for dynamic content including insights and career opportunities.",
+      "Implemented technical SEO foundations including canonical URLs, structured data, sitemap, robots.txt, redirects, and search indexing improvements.",
+      "Migrated and deployed the production website to an Ubuntu VPS using Nginx, Git-based deployment, Let's Encrypt SSL, and production domain configuration.",
     ],
     technologies: [
       "React",
       "TypeScript",
+      "Vite",
       "Tailwind CSS",
       "RTK Query",
       "Node.js",
       "Express",
       "PostgreSQL",
+      "Nginx",
+      "Ubuntu",
+      "Let's Encrypt",
     ],
     links: [
       {
@@ -127,7 +141,7 @@ export const projects: Project[] = [
   {
     id: "brilcs-cms",
     title: "BRILCS CMS",
-    subtitle: "Custom CMS platform for BRILCS content operations",
+    subtitle: "Custom full-stack CMS for business content operations",
     category: "web",
     featured: false,
     badge: "Professional Project",
@@ -136,53 +150,64 @@ export const projects: Project[] = [
     role: "Founder / Full Stack Developer",
     metrics: [
       { value: "CMS", label: "Platform" },
-      { value: "AWS", label: "Cloud" },
-      { value: "Full", label: "Ownership" },
+      { value: "Full", label: "Stack" },
+      { value: "Live", label: "Production" },
     ],
     overview:
-      "A custom CMS platform built to manage BRILCS website content, including insights, reports, careers, media uploads, authentication, and structured content workflows.",
+      "A custom full-stack CMS built to manage BRILCS website content and publishing workflows, including insights, careers, media uploads, authentication, rich-text content, and production content operations.",
     highlights: [
-      "Built modular CMS flows for insights, reports, careers, and media management.",
-      "Implemented authentication, protected routes, and backend API integration.",
-      "Created a generic image upload system with WebP optimization and cleanup handling.",
-      "Designed the system to support production content workflows and future modules.",
+      "Built modular CMS workflows for insights and careers with create, edit, publish, unpublish, search, and content management capabilities.",
+      "Developed the admin frontend and Node.js/Express APIs with PostgreSQL and Prisma for structured content management.",
+      "Implemented authentication, protected routes, rich-text editing, media uploads, image optimization, and reusable content workflows.",
+      "Deployed and managed the CMS frontend and backend in production using Nginx, PM2, PostgreSQL, SSL, and Git-based deployment workflows.",
     ],
     technologies: [
       "React",
       "TypeScript",
-      "Tailwind CSS",
       "RTK Query",
       "Node.js",
       "Express",
       "PostgreSQL",
-      "AWS",
+      "Prisma",
+      "TipTap",
       "Nginx",
+      "PM2",
+      "Ubuntu",
     ],
     links: [],
   },
   {
     id: "udaan-fc",
     title: "Udaan FC",
-    subtitle: "Multi-page corporate website for a facility company",
+    subtitle: "Multi-page corporate website for facility services",
     category: "web",
     featured: false,
     badge: "Live Website",
     image: projectImages.udaanFc,
     images: [projectImages.udaanFc],
-    role: "Web Developer",
+    role: "Full Stack Developer",
     metrics: [
       { value: "10+", label: "Pages" },
-      { value: "Live", label: "Website" },
+      { value: "Live", label: "Production" },
       { value: "Client", label: "Project" },
     ],
     overview:
-      "A professional static website for Udaan Facility Company, designed across multiple pages to present services, company information, and contact details clearly.",
+      "A production corporate website developed for Udaan Facility Company to present its security, CCTV, facility management, and vehicle-related services through a structured and responsive digital presence.",
     highlights: [
-      "Built a multi-page business website with responsive layouts.",
-      "Created service-focused pages for a professional company presence.",
-      "Delivered a clean, easy-to-navigate website suitable for real business use.",
+      "Built a responsive multi-page corporate website with reusable components and service-focused content architecture.",
+      "Structured dedicated sections for security, CCTV, facility management, vehicle services, company credentials, and contact information.",
+      "Optimized the interface for desktop, tablet, and mobile while maintaining consistent branding and navigation.",
+      "Deployed the production website to an Ubuntu VPS using Nginx, Git-based deployment, domain configuration, and SSL.",
     ],
-    technologies: ["HTML", "CSS", "JavaScript", "Responsive Design"],
+    technologies: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "Responsive Design",
+      "Nginx",
+      "Ubuntu",
+    ],
     links: [
       {
         label: "Visit Website",
@@ -195,29 +220,33 @@ export const projects: Project[] = [
     id: "piknix",
     title: "Piknix",
     subtitle:
-      "Local grocery marketplace with merchant ordering and delivery workflows.",
+      "Local grocery marketplace with merchant ordering and delivery workflows",
     category: "web",
     featured: true,
     badge: "Professional Project",
     image: projectImages.piknix,
     images: [projectImages.piknix],
-    role: "Software Developer",
+    role: "Full Stack Developer",
     overview:
-      "Piknix was a local grocery e-commerce marketplace that allowed merchants to register, manage products, and sell groceries online.",
+      "A mobile-first local grocery e-commerce marketplace that enabled merchants to manage products and customers to discover, order, and purchase groceries through an integrated online platform.",
     highlights: [
-      "Developed responsive views and templates using JavaScript and EJS.",
-      "Worked on REST APIs, database schema design, authentication, and payment integration.",
-      "Integrated PayPal, Google APIs, Passport authentication, SendGrid, Twilio, and localization workflows.",
-      "Configured Docker, Nginx, SSL certificates, SEO improvements, and deployment setup.",
+      "Developed responsive marketplace views and product workflows using JavaScript, EJS, Bootstrap, Node.js, and Express.",
+      "Built REST APIs, MySQL database workflows, product listing, search, sorting, filtering, and role-based authentication.",
+      "Integrated PayPal, Google APIs, Passport, SendGrid, Twilio, and localization services for payments, authentication, communication, and multilingual support.",
+      "Used Docker for development environments and configured Nginx, SSL certificates, and DigitalOcean production deployment.",
     ],
     technologies: [
       "JavaScript",
       "Node.js",
       "Express",
+      "EJS",
       "MySQL",
       "Sequelize",
       "Bootstrap",
       "Passport",
+      "PayPal",
+      "SendGrid",
+      "Twilio",
       "Nginx",
       "Docker",
     ],
@@ -232,7 +261,7 @@ export const projects: Project[] = [
   {
     id: "yelpcamp",
     title: "Yelp Camp",
-    subtitle: "Campground listing web application",
+    subtitle: "Full-stack campground discovery and management platform",
     category: "web",
     archiveCategory: "web",
     featured: false,
@@ -240,13 +269,27 @@ export const projects: Project[] = [
     images: [projectImages.yelpcamp],
     role: "Full Stack Developer",
     overview:
-      "A responsive web application for listing, viewing, and managing campground information.",
+      "A full-stack web application providing a persistent platform where users can discover, create, edit, and manage campground listings and comments, with authentication, authorization, image uploads, and responsive user interactions.",
     highlights: [
-      "Implemented authentication and authorization with Passport.",
-      "Built RESTful routes for campground and comment management.",
-      "Used MongoDB and Mongoose for data storage.",
+      "Built complete campground and comment CRUD workflows using Node.js, Express, MongoDB, Mongoose, and EJS.",
+      "Implemented user authentication with Passport and session-based authorization to protect profiles and management actions.",
+      "Added ownership-based permissions so users can only edit or delete campgrounds and comments they created.",
+      "Implemented campground photo uploads, editable campground images, flash messages, and responsive Bootstrap interfaces.",
+      "Structured RESTful routes and persistent MongoDB data models for users, campgrounds, and associated comments.",
     ],
-    technologies: ["Node.js", "Express", "MongoDB", "Mongoose", "Passport"],
+    technologies: [
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Mongoose",
+      "EJS",
+      "Passport",
+      "Passport Local",
+      "Express Session",
+      "Method Override",
+      "Connect Flash",
+      "Bootstrap",
+    ],
     links: [
       {
         label: "View Code",
@@ -292,7 +335,6 @@ export const projects: Project[] = [
       },
     ],
   },
-
   {
     id: "sani-amigo",
     title: "Sani Amigo",
@@ -330,7 +372,7 @@ export const projects: Project[] = [
   {
     id: "restful-blog",
     title: "RESTful Blog",
-    subtitle: "CRUD blog using RESTful routes",
+    subtitle: "Full-stack CRUD blog built around RESTful routing",
     category: "web",
     archiveCategory: "web",
     featured: false,
@@ -338,17 +380,24 @@ export const projects: Project[] = [
     images: [projectImages.restfulBlog],
     role: "Full Stack Developer",
     overview:
-      "A blog application for creating, reading, updating, and deleting blog posts using RESTful routing.",
+      "A full-stack blog application built to implement RESTful architecture, allowing users to create, browse, view, edit, and delete persistent blog content through structured server-side routes.",
     highlights: [
-      "Implemented CRUD operations.",
-      "Used Semantic UI for responsive design.",
-      "Used MongoDB for development data storage.",
+      "Implemented the complete seven-route RESTful pattern for index, new, create, show, edit, update, and delete operations.",
+      "Built the server-side application using Node.js and Express with EJS templates for dynamic page rendering.",
+      "Used MongoDB and Mongoose for persistent blog storage and database operations.",
+      "Implemented Method Override for PUT and DELETE requests, request-body parsing, static asset serving, and HTML input sanitization.",
+      "Structured the application into server routes, reusable EJS views, public assets, and database-backed content workflows.",
     ],
     technologies: [
       "JavaScript",
       "Node.js",
       "Express",
       "MongoDB",
+      "Mongoose",
+      "EJS",
+      "Method Override",
+      "Body Parser",
+      "Sanitizer",
       "Semantic UI",
     ],
     links: [
@@ -370,11 +419,11 @@ export const projects: Project[] = [
     images: [projectImages.reactMania],
     role: "Frontend Developer",
     overview:
-      "A responsive React application containing multiple small to medium projects built with React hooks and Bootstrap.",
+      "A responsive React application containing multiple small to medium projects built to explore component-based development, hooks, state, and frontend interactions.",
     highlights: [
-      "Created reusable React components.",
+      "Created reusable React components across multiple mini applications.",
       "Used React hooks for state and interaction handling.",
-      "Built responsive layouts with Bootstrap.",
+      "Built responsive layouts and interfaces with Bootstrap and CSS.",
     ],
     technologies: ["React", "JavaScript", "React Hooks", "Bootstrap", "CSS"],
     links: [
@@ -393,7 +442,7 @@ export const projects: Project[] = [
   {
     id: "search-engine",
     title: "Search Engine",
-    subtitle: "Full stack persistent text search app",
+    subtitle: "Full-stack persistent text search application",
     category: "web",
     archiveCategory: "learning",
     featured: false,
@@ -401,11 +450,11 @@ export const projects: Project[] = [
     images: [projectImages.searchEngine],
     role: "Full Stack Developer",
     overview:
-      "A full-stack React and Node.js application that provides persistent search functionality across uploaded text files.",
+      "A full-stack React and Node.js application built to search across stored text content and return persistent search results through a REST API.",
     highlights: [
-      "Built React frontend and Node.js backend.",
-      "Created REST APIs for returning search results.",
-      "Handled text file search logic and persistent data flow.",
+      "Built the frontend search experience using React and Bootstrap.",
+      "Developed a Node.js and Express backend with REST APIs for search operations.",
+      "Implemented text-file search logic and persistent application data flow.",
     ],
     technologies: ["React", "Node.js", "Express", "REST API", "Bootstrap"],
     links: [
@@ -427,11 +476,11 @@ export const projects: Project[] = [
     images: [projectImages.tekhubWebsite],
     role: "Frontend Developer",
     overview:
-      "A frontend design for a college device lending system where students could browse and borrow devices such as laptops and LAN cables.",
+      "A responsive frontend for a college device lending system where students could browse and borrow devices such as laptops and networking equipment.",
     highlights: [
-      "Built responsive screens for product listing and borrowing.",
-      "Implemented sign-in and sign-up form validation.",
-      "Created user-friendly web flows for students.",
+      "Built responsive screens for product listing and borrowing workflows.",
+      "Implemented sign-in and sign-up forms with client-side validation.",
+      "Created clear user flows for browsing and borrowing available devices.",
     ],
     technologies: ["HTML", "CSS", "JavaScript", "jQuery", "Bootstrap"],
     links: [
@@ -450,21 +499,35 @@ export const projects: Project[] = [
   {
     id: "tekhub-android",
     title: "TekHub Android",
-    subtitle: "Android lending application",
+    subtitle: "Full-stack Android device lending and inventory system",
     category: "mobile",
     archiveCategory: "mobile",
     featured: true,
     image: projectImages.tekhubMobile,
     images: [projectImages.tekhubMobile],
-    role: "Android Developer",
+    role: "Android / Full Stack Developer",
     overview:
-      "An Android application used by students to borrow devices from college inventory.",
+      "A college device lending system developed for students of Cégep de la Gaspésie, combining an Android application, RESTful backend services, and a cloud-hosted MySQL database to manage device borrowing, availability, waiting lists, issues, and administrative workflows.",
     highlights: [
-      "Implemented login, registration, borrowing, waiting list, filtering, feedback, and rating features.",
-      "Connected Android app with Amazon RDS MySQL through web calls.",
-      "Worked with Agile Scrum methodology and created SRS documentation.",
+      "Built student workflows for registration, authentication, password reset, item browsing, borrowing, search, filtering, waiting lists, ratings, feedback, and issue reporting.",
+      "Developed administrative workflows for adding, updating, and deleting inventory, managing students, resolving reported issues, and reviewing lending orders.",
+      "Connected the Android application to RESTful Java web services backed by an Amazon RDS MySQL database.",
+      "Implemented Firebase SMS verification and persistent application-state handling across Android lifecycle events.",
+      "Worked on image upload and Base64 processing, device/server time-zone handling, item availability, borrowing deadlines, and waiting-list workflows.",
     ],
-    technologies: ["Android", "Java", "MySQL", "Amazon RDS", "Firebase"],
+    technologies: [
+      "Android",
+      "Java",
+      "REST API",
+      "JAX-RS",
+      "MySQL",
+      "Amazon RDS",
+      "JDBC",
+      "JSON",
+      "Firebase",
+      "Android Studio",
+      "NetBeans",
+    ],
     links: [
       {
         label: "View Code",
@@ -478,12 +541,12 @@ export const projects: Project[] = [
       },
       {
         label: "SRS Document",
-        url: "/assets/res/LendSystemIteration3.pdf",
+        url: lendSystemSrs,
         type: "document",
       },
       {
         label: "Presentation",
-        url: "/assets/res/TekhubFinalPresentation.pdf",
+        url: tekhubMobilePresentation,
         type: "document",
       },
     ],
@@ -491,7 +554,7 @@ export const projects: Project[] = [
   {
     id: "food-buddy",
     title: "Food Buddy",
-    subtitle: "Android restaurant partner app",
+    subtitle: "Android restaurant partner application",
     category: "mobile",
     archiveCategory: "mobile",
     featured: false,
@@ -499,11 +562,11 @@ export const projects: Project[] = [
     images: [projectImages.foodBuddyMobile],
     role: "Android Developer",
     overview:
-      "An Android app that allows users to select a restaurant and find a buddy or partner to join them for food.",
+      "An Android application that helps users select a restaurant and find another user interested in joining them for a meal.",
     highlights: [
-      "Built user registration and password reset functionality.",
-      "Displayed available users with RecyclerView from a MySQL database.",
-      "Implemented Firebase Cloud Messaging notifications.",
+      "Built user registration, account workflows, and password reset functionality.",
+      "Displayed available users through RecyclerView using data retrieved from a MySQL database.",
+      "Implemented Firebase Cloud Messaging for application notifications.",
     ],
     technologies: ["Android", "Java", "Firebase", "MySQL", "XAMPP"],
     links: [
@@ -514,7 +577,7 @@ export const projects: Project[] = [
       },
       {
         label: "SRS Document",
-        url: "/assets/res/foodbuddySrs.pdf",
+        url: foodBuddySrs,
         type: "document",
       },
     ],
@@ -550,8 +613,8 @@ export const projects: Project[] = [
   // },
   {
     id: "traffic-road-sign",
-    title: "Traffic Road Sign Canada",
-    subtitle: "Android driving test preparation app",
+    title: "Traffic Road Signs Canada",
+    subtitle: "Published Android guide to Canadian traffic and road signs",
     category: "mobile",
     archiveCategory: "mobile",
     featured: true,
@@ -559,19 +622,26 @@ export const projects: Project[] = [
     images: [projectImages.trafficCanadaMobile],
     role: "Android Developer",
     overview:
-      "A theory and quiz-based Android app for users preparing for the Canadian driving test.",
+      "A published Android learning application designed to help new and learner drivers understand Canadian traffic signs, road signs, traffic lights, and driving-related visual rules.",
     highlights: [
-      "Built theory and quiz flows.",
-      "Published the app on Google Play Store.",
-      "Used Google Play Console insights to understand users.",
+      "Organized Canadian road-sign content into regulatory, warning, road-work, information and direction, other-sign, and traffic-light categories.",
+      "Presented individual road signs with visual references and descriptions to help users understand their meaning while learning or driving.",
+      "Designed the application for mobile learning and Canadian driving-license preparation.",
+      "Published and managed the application through Google Play and maintained its source code as an independent Android project.",
     ],
-    technologies: ["Android", "Java", "XML", "Google Play Console"],
+    technologies: [
+      "Android",
+      "Java",
+      "XML",
+      "Android SDK",
+      "Google Play Console",
+    ],
     links: [
-      {
-        label: "Play Store",
-        url: "https://play.google.com/store/apps/details?id=com.vid_lancer.trafficroadsignscanada",
-        type: "live",
-      },
+      // {
+      //   label: "Play Store",
+      //   url: "https://play.google.com/store/apps/details?id=com.vid_lancer.trafficroadsignscanada",
+      //   type: "live",
+      // },
       {
         label: "View Code",
         url: "https://github.com/Gilpix/TrafficRoadSignsCanada",
@@ -590,11 +660,11 @@ export const projects: Project[] = [
     images: [projectImages.colorguess],
     role: "Frontend Developer",
     overview:
-      "A browser game where users guess the correct color square based on an RGB value.",
+      "A browser-based game where users identify the correct color from multiple choices using a displayed RGB value.",
     highlights: [
       "Built easy and hard game modes.",
-      "Used JavaScript DOM logic for game behavior.",
-      "Created responsive game UI.",
+      "Used JavaScript DOM manipulation and event handling for game behavior.",
+      "Created a responsive game interface.",
     ],
     technologies: ["JavaScript", "HTML", "CSS", "Bootstrap"],
     links: [
@@ -613,7 +683,7 @@ export const projects: Project[] = [
   {
     id: "todo-list",
     title: "To Do List",
-    subtitle: "jQuery task list app",
+    subtitle: "jQuery task list application",
     category: "web",
     archiveCategory: "learning",
     featured: false,
@@ -621,13 +691,13 @@ export const projects: Project[] = [
     images: [projectImages.todolist],
     role: "Frontend Developer",
     overview:
-      "A responsive to-do list app where users can add, remove, and mark tasks as completed.",
+      "A responsive task-list application where users can add, remove, and mark tasks as completed.",
     highlights: [
       "Implemented add, delete, and complete task interactions.",
-      "Used jQuery for DOM behavior.",
-      "Created clean responsive UI.",
+      "Used jQuery for DOM manipulation and application behavior.",
+      "Created a simple responsive task management interface.",
     ],
-    technologies: ["jQuery", "CSS", "HTML"],
+    technologies: ["jQuery", "JavaScript", "CSS", "HTML"],
     links: [
       {
         label: "View Demo",
@@ -644,7 +714,7 @@ export const projects: Project[] = [
   {
     id: "travel-with-us",
     title: "Travel With Us",
-    subtitle: "Android bus booking prototype",
+    subtitle: "Interactive bus booking mobile application prototype",
     category: "design",
     archiveCategory: "learning",
     featured: false,
@@ -652,17 +722,25 @@ export const projects: Project[] = [
     images: [projectImages.travelMobile],
     role: "UI/UX Designer",
     overview:
-      "A mobile app prototype for an intercity and intracity bus booking system.",
+      "A detailed mobile bus-booking prototype designed for both intercity and intracity travel, covering the complete journey from authentication and bus discovery through seat selection, payment, ticket management, and route tracking.",
     highlights: [
-      "Designed app screens and navigation flow.",
-      "Created prototype using Justinmind.",
-      "Prepared screen-flow documentation.",
+      "Designed end-to-end intercity and intracity bus-booking workflows with origin, destination, travel dates, passenger details, and bus discovery.",
+      "Created bus sorting, seat selection, boarding and drop-off selection, traveller-information, and payment experiences.",
+      "Designed booking-management flows for viewing routes, downloading e-tickets, reviewing previous bookings, and cancelling tickets.",
+      "Included guest booking, user profiles, authentication, contact support, navigation drawer, and route-detail experiences.",
     ],
-    technologies: ["Justinmind", "UI Design", "Prototype", "Screen Flow"],
+    technologies: [
+      "Justinmind",
+      "UI/UX Design",
+      "Interactive Prototyping",
+      "User Flow",
+      "Wireframing",
+      "Mobile Design",
+    ],
     links: [
       {
         label: "Screen Flow",
-        url: "/assets/res/travelWithUs.docx",
+        url: travelWithUsScreenFlow,
         type: "document",
       },
     ],
@@ -670,7 +748,7 @@ export const projects: Project[] = [
   {
     id: "share-expenses",
     title: "Share Expenses",
-    subtitle: "Expense splitting app prototype",
+    subtitle: "Expense splitting application prototype",
     category: "design",
     archiveCategory: "learning",
     featured: false,
@@ -678,22 +756,22 @@ export const projects: Project[] = [
     images: [projectImages.shareExpenses],
     role: "UI/UX Designer",
     overview:
-      "An Android app design for calculating personal expenses and splitting expenses between two or more users.",
+      "A mobile application prototype for tracking personal expenses and splitting shared expenses between two or more users.",
     highlights: [
-      "Designed expense tracking and group bill splitting flows.",
-      "Created reminder and notification concepts.",
-      "Prepared screen-flow and presentation documents.",
+      "Designed personal expense tracking and group bill-splitting workflows.",
+      "Created reminder, notification, and shared-expense interaction concepts.",
+      "Prepared application screen-flow and presentation documentation.",
     ],
     technologies: ["Justinmind", "UI Design", "Prototype", "Documentation"],
     links: [
       {
         label: "Screen Flow",
-        url: "/assets/res/Share Expense ScreenFlowDiagram.pdf",
+        url: shareExpenseFlowDiagram,
         type: "document",
       },
       {
         label: "Presentation",
-        url: "/assets/res/ShareExpensesPresentation.pdf",
+        url: shareExpensesPresentation,
         type: "document",
       },
     ],
@@ -701,7 +779,8 @@ export const projects: Project[] = [
   {
     id: "pro-quiz",
     title: "Pro Quiz",
-    subtitle: "Android quiz game",
+    subtitle:
+      "Android multimedia quiz app with 22 categories and 3000+ questions",
     category: "mobile",
     archiveCategory: "mobile",
     featured: false,
@@ -709,19 +788,28 @@ export const projects: Project[] = [
     images: [projectImages.proQuizMobile],
     role: "Android Developer",
     overview:
-      "A quiz game with categories such as sports, logos, music, nature, and monuments.",
+      "An Android quiz application combining general knowledge, picture-based, and audio-based questions across 22 categories, with thousands of questions and progressively challenging gameplay.",
     highlights: [
-      "Built Android quiz flows and category-based questions.",
-      "Published the app on Google Play Store.",
-      "Classified users based on performance level.",
+      "Built general, picture, logo, and audio-based quiz experiences within a single Android application.",
+      "Organized quiz content across 22 categories with more than 3,000 questions.",
+      "Implemented increasing difficulty levels, performance-based gameplay, and a dynamic soundtrack.",
+      "Optimized the application for multiple Android phone and tablet screen sizes.",
+      "Published the application on Google Play and maintained the Android source project.",
     ],
-    technologies: ["Android", "Java", "XML", "Google Play Store"],
+    technologies: [
+      "Android",
+      "Java",
+      "XML",
+      "Android SDK",
+      "Android Support Library",
+      "Google Play Store",
+    ],
     links: [
-      {
-        label: "Play Store",
-        url: "https://play.google.com/store/apps/details?id=com.gilpix.test",
-        type: "live",
-      },
+      // {
+      //   label: "Play Store",
+      //   url: "https://play.google.com/store/apps/details?id=com.gilpix.test",
+      //   type: "live",
+      // },
       {
         label: "View Code",
         url: "https://github.com/Gilpix/ProQuiz",
