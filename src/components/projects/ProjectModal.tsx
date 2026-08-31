@@ -63,7 +63,12 @@ function ProjectModal({ project, onClose }: ProjectModalProps) {
       />
 
       {/* ================= MODAL ================= */}
-      <div className="relative max-h-[90vh] w-full max-w-6xl overflow-hidden rounded-[2rem] border border-[var(--project-modal-border)] bg-[var(--project-modal-bg)] shadow-[var(--project-modal-shadow)]">
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-label={`${project.title} project details`}
+        className="relative max-h-[90vh] w-full max-w-6xl overflow-hidden rounded-[2rem] border border-[var(--project-modal-border)] bg-[var(--project-modal-bg)] shadow-[var(--project-modal-shadow)]"
+      >
         {/* Close button */}
         <button
           type="button"

@@ -6,12 +6,13 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, Mail } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import resumePdf from "../../assets/resume/Kuldeep-Singh-Resume.pdf";
 
 const footerLinks = [
   {
     label: "Resume",
     mobileLabel: "Open Resume",
-    href: "/assets/resume/Kuldeep-Singh-Resume.pdf",
+    href: resumePdf,
     external: true,
     icon: ArrowUpRight,
   },

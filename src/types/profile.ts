@@ -7,7 +7,7 @@ export type SocialPlatform =
   | "linkedin"
   | "github"
   | "instagram"
-  | "playStore"
+  // | "playStore"
   | "email";
 
 export interface SocialLink {
