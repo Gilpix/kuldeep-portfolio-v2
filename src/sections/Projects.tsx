@@ -29,9 +29,9 @@ const professionalIds = ["brilcs-cms", "udaan-fc", "piknix"];
 const archivePreviewCount = 4;
 
 const archiveTabs = [
-  { label: "Mobile Apps", value: "mobile" },
   { label: "Web Apps", value: "web" },
-  { label: "UI & Learning", value: "learning" },
+  { label: "Mobile Apps", value: "mobile" },
+  { label: "Prototypes & Learning", value: "learning" },
 ] as const;
 
 type ArchiveTab = (typeof archiveTabs)[number]["value"];
@@ -42,8 +42,7 @@ function getProjectById(id: string) {
 
 function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [activeArchiveTab, setActiveArchiveTab] =
-    useState<ArchiveTab>("mobile");
+  const [activeArchiveTab, setActiveArchiveTab] = useState<ArchiveTab>("web");
   const [showAllArchive, setShowAllArchive] = useState(false);
 
   const featuredProjects = featuredIds
@@ -64,26 +63,9 @@ function Projects() {
     return projects.filter((project) => !hiddenIds.has(project.id));
   }, []);
 
-  const filteredArchiveProjects = archiveProjects.filter((project) => {
-    if (activeArchiveTab === "mobile") return project.category === "mobile";
-
-    if (activeArchiveTab === "web") {
-      return (
-        project.category === "web" &&
-        !["reactmania", "yelpcamp", "color-guess", "my-portfolio"].includes(
-          project.id,
-        )
-      );
-    }
-
-    return (
-      project.category === "design" ||
-      ["reactmania", "yelpcamp", "color-guess", "my-portfolio"].includes(
-        project.id,
-      )
-    );
-  });
-
+  const filteredArchiveProjects = archiveProjects.filter(
+    (project) => project.archiveCategory === activeArchiveTab,
+  );
   const visibleArchiveProjects = showAllArchive
     ? filteredArchiveProjects
     : filteredArchiveProjects.slice(0, archivePreviewCount);
@@ -320,9 +302,9 @@ function Projects() {
                       variants={fadeUp}
                       whileHover={{ y: -2, scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-300 transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-black"
+                      className="rounded-full border border-[var(--color-card-border)] bg-[var(--color-glass)] px-3 py-1 text-xs font-medium text-[var(--color-text-soft)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-[var(--color-black)]"
                     >
-                      {tech}
+                      {tech}ssss
                     </motion.span>
                   ))}
                 </motion.div>

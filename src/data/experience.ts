@@ -32,7 +32,7 @@ export const experiences: Experience[] = [
   {
     company: "JDSA Pvt. Ltd.",
     role: "Full Stack Developer",
-    period: "Nov 2024 - Present",
+    period: "Nov 2024 - Oct 2025",
     location: "Remote, Canada",
     description:
       "Building SaaS and workforce-management solutions for the security industry using modern full-stack technologies, cloud APIs, and production deployment workflows.",
