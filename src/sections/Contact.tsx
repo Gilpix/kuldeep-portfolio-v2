@@ -9,6 +9,7 @@ import { Download, Mail, Sparkles } from "lucide-react";
 import ContactForm from "../components/contact/ContactForm";
 import SectionHeading from "../components/common/SectionHeading";
 import SectionWrapper from "../components/layout/SectionWrapper";
+import resumePdf from "../assets/resume/Kuldeep-Singh-Resume.pdf";
 import { fadeUp, viewportOnce } from "../utils/animations";
 
 function Contact() {
@@ -78,7 +79,7 @@ function Contact() {
             </a>
 
             <a
-              href="/assets/resume/Kuldeep-Singh-Resume.pdf"
+              href={resumePdf}
               target="_blank"
               rel="noopener noreferrer"
               className="secondary-button"

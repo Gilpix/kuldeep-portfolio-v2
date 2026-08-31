@@ -94,7 +94,7 @@ function Hero() {
             variants={fadeUp}
             className="flex flex-wrap items-end gap-x-3 gap-y-1"
           >
-            <span className="text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">
+            <span className="text-3xl font-semibold tracking-tight text-[var(--hero-text)] sm:text-4xl lg:text-5xl">
               Hi, I'm
             </span>
 
@@ -105,7 +105,7 @@ function Hero() {
 
           <motion.h2
             variants={fadeUp}
-            className="mt-5 min-h-[3.5rem] text-3xl font-black leading-tight tracking-[-0.03em] text-white sm:text-4xl lg:text-5xl"
+            className="mt-5 min-h-[3.5rem] text-3xl font-black leading-tight tracking-[-0.03em] text-[var(--hero-text)] sm:text-4xl lg:text-5xl"
           >
             {currentWord
               .slice(0, letterCount)
@@ -124,7 +124,7 @@ function Hero() {
                     className={
                       isActiveLetter
                         ? "text-[var(--color-primary)]"
-                        : "text-white"
+                        : "text-[var(--hero-text)]"
                     }
                   >
                     {letter}
@@ -139,7 +139,7 @@ function Hero() {
 
           <motion.p
             variants={fadeUp}
-            className="mt-7 max-w-2xl text-base leading-8 text-slate-200 sm:text-lg"
+            className="mt-7 max-w-2xl text-base leading-8 text-[var(--hero-text-soft)] sm:text-lg"
           >
             {profile.summary}
           </motion.p>
@@ -152,7 +152,7 @@ function Hero() {
 
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-full border border-white/60 bg-white/5 px-6 py-3 text-sm font-bold !text-white transition duration-200 hover:-translate-y-0.5 hover:border-[var(--color-primary)] hover:!text-[var(--color-primary)] active:scale-95 active:bg-[var(--color-primary)] active:border-[var(--color-primary)] active:!text-[var(--color-black)]"
+              className="inline-flex items-center gap-2 rounded-full border border-[var(--hero-secondary-border)] bg-[var(--hero-secondary-bg)] px-6 py-3 text-sm font-bold !text-[var(--hero-text)] transition duration-200 hover:-translate-y-0.5 hover:border-[var(--color-primary)] hover:!text-[var(--color-primary)] active:scale-95 active:border-[var(--color-primary)] active:bg-[var(--color-primary)] active:!text-[var(--color-black)]"
             >
               Get In Touch
               <Download size={18} />
@@ -175,10 +175,12 @@ function Hero() {
           <motion.div
             whileHover={{ scale: 0.96 }}
             whileTap={{ scale: 0.94 }}
-            className="group relative mt-6 size-52 cursor-pointer rounded-full border-[2px] border-[var(--color-primary)] bg-[var(--color-primary)] shadow-2xl shadow-black/40 sm:mt-10 sm:size-72 lg:mt-0"
+            className="group relative mt-6 size-52 cursor-pointer rounded-full border-[2px] border-[var(--color-primary)] bg-[var(--hero-image-bg)] shadow-[var(--hero-image-shadow)] sm:mt-10 sm:size-72 lg:mt-0"
           >
             <span className="absolute -inset-4 rounded-full border border-[var(--color-primary)]/60 transition duration-500 group-hover:scale-110 group-hover:opacity-40 group-active:scale-125 group-active:opacity-20" />
+
             <span className="absolute -inset-9 rounded-full border border-[var(--color-primary)]/35 transition duration-700 group-hover:scale-110 group-hover:opacity-30 group-active:scale-150 group-active:opacity-10" />
+
             <span className="absolute -inset-14 rounded-full border border-[var(--color-primary)]/20 transition duration-1000 group-hover:scale-110 group-hover:opacity-20 group-active:scale-[1.7] group-active:opacity-0" />
 
             <motion.img

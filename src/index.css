@@ -63,7 +63,7 @@ canvas {
   --color-glass: rgb(255 255 255 / 0.72);
 
   /* Section backgrounds */
-  --section-bg-hero-left: var(--color-navy);
+  --section-bg-hero-left: #f8fafc;
   --section-bg-hero-right: var(--color-primary);
   --section-bg-page: var(--color-bg);
   --section-bg-about: transparent;
@@ -72,18 +72,36 @@ canvas {
   --section-bg-projects: transparent;
   --section-bg-contact: transparent;
 
-  /* Hero background */
-  --hero-gradient: linear-gradient(
-    135deg,
-    var(--section-bg-hero-left) 0%,
-    var(--section-bg-hero-left) 52%,
-    var(--section-bg-hero-right) 52%,
-    var(--section-bg-hero-right) 100%
-  );
+  /* Hero theme */
+  --section-bg-hero-left: transparent;
+  --section-bg-hero-right: var(--color-primary);
 
-  --hero-overlay:
+  --hero-text: var(--color-text);
+  --hero-text-soft: var(--color-text-soft);
+
+  --hero-secondary-bg: rgb(255 255 255 / 0.72);
+  --hero-secondary-border: rgb(15 23 42 / 0.18);
+
+  --hero-image-bg: #ffffff;
+  --hero-image-shadow: 0 30px 80px rgb(15 23 42 / 0.18);
+
+  /* Hero background */
+  --hero-gradient:
+    radial-gradient(circle at 15% 10%, rgb(244 180 0 / 0.08), transparent 28%),
+    radial-gradient(circle at 85% 20%, rgb(30 58 95 / 0.14), transparent 30%),
+    linear-gradient(
+      135deg,
+      var(--section-bg-hero-left) 0%,
+      var(--section-bg-hero-left) 65%,
+      var(--section-bg-hero-right) 52%,
+      var(--section-bg-hero-right) 100%
+    );
+  /* Light mode keeps the white side clean */
+  --hero-overlay: transparent;
+
+  /* --hero-overlay:
     radial-gradient(circle at 20% 20%, rgb(244 180 0 / 0.2), transparent 30%),
-    linear-gradient(90deg, rgb(2 6 23 / 0.94), rgb(2 6 23 / 0.38));
+    linear-gradient(90deg, rgb(2 6 23 / 0.94), rgb(2 6 23 / 0.38)); */
 
   /* Layout */
   --container-width: 72rem;
@@ -92,6 +110,48 @@ canvas {
   /* Effects */
   --shadow-card: 0 24px 80px rgb(15 23 42 / 0.08);
   --shadow-card-strong: 0 30px 100px rgb(15 23 42 / 0.14);
+
+  /* Experience theme */
+  --experience-timeline-line: #cbd5e1;
+
+  /* Featured projects */
+  --featured-project-bg: #ffffff;
+  --featured-project-media-bg: #f8fafc;
+  --featured-project-border: #dbe2ea;
+
+  --featured-project-title: var(--color-text);
+  --featured-project-text: var(--color-text-soft);
+  --featured-project-metric-text: var(--color-text-muted);
+
+  --featured-project-divider: rgb(15 23 42 / 0.1);
+
+  --featured-project-gradient-strong: rgb(255 255 255 / 1);
+  --featured-project-gradient-mid: rgb(255 255 255 / 0.9);
+
+  --featured-project-shadow: 0 24px 70px rgb(15 23 42 / 0.12);
+
+  /* Project modal */
+  --project-modal-backdrop: rgb(15 23 42 / 0.45);
+
+  --project-modal-bg: #ffffff;
+  --project-modal-border: #dbe2ea;
+  --project-modal-media-bg: #ffffff;
+
+  --project-modal-title: #0f172a;
+  --project-modal-text: #475569;
+
+  --project-modal-panel-bg: #ffffff;
+  --project-modal-panel-border: #e2e8f0;
+
+  --project-modal-control-bg: #ffffff;
+  --project-modal-control-border: #cbd5e1;
+  --project-modal-control-text: #0f172a;
+
+  --project-modal-chip-bg: #f8fafc;
+  --project-modal-chip-border: #dbe2ea;
+
+  --project-modal-shadow: 0 40px 140px rgb(15 23 42 / 0.22);
+  --project-modal-panel-shadow: 0 16px 45px rgb(15 23 42 / 0.08);
 }
 
 .dark {
@@ -108,6 +168,23 @@ canvas {
   --color-card-border: rgb(255 255 255 / 0.1);
   --color-glass: rgb(255 255 255 / 0.06);
 
+  /* Hero */
+  --section-bg-hero-left: var(--color-navy);
+  --section-bg-hero-right: var(--color-primary);
+
+  --hero-text: #ffffff;
+  --hero-text-soft: #cbd5e1;
+
+  --hero-secondary-bg: rgb(255 255 255 / 0.05);
+  --hero-secondary-border: rgb(255 255 255 / 0.6);
+
+  --hero-image-bg: var(--color-black);
+  --hero-image-shadow: 0 30px 80px rgb(0 0 0 / 0.4);
+
+  --hero-overlay:
+    radial-gradient(circle at 20% 20%, rgb(244 180 0 / 0.2), transparent 30%),
+    linear-gradient(90deg, rgb(2 6 23 / 0.94), rgb(2 6 23 / 0.38));
+
   --section-bg-page: var(--color-bg);
   --section-bg-about: transparent;
   --section-bg-experience: transparent;
@@ -117,6 +194,50 @@ canvas {
 
   --shadow-card: 0 24px 80px rgb(0 0 0 / 0.24);
   --shadow-card-strong: 0 30px 110px rgb(0 0 0 / 0.36);
+
+  /* Experience */
+  --experience-timeline-line: rgb(255 255 255 / 0.1);
+
+  /* Featured projects */
+  --featured-project-bg: #060a16;
+  --featured-project-media-bg: #050814;
+  --featured-project-border: rgb(255 255 255 / 0.15);
+
+  --featured-project-title: #ffffff;
+  --featured-project-text: #e2e8f0;
+  --featured-project-metric-text: #cbd5e1;
+
+  --featured-project-divider: rgb(255 255 255 / 0.16);
+
+  --featured-project-gradient-strong: rgb(5 8 20 / 1);
+  --featured-project-gradient-mid: rgb(5 8 20 / 0.88);
+
+  --featured-project-shadow: 0 30px 100px rgb(0 0 0 / 0.35);
+
+  /* Project modal */
+  --project-modal-backdrop: rgb(0 0 0 / 0.8);
+
+  --project-modal-bg: #070b18;
+  --project-modal-border: rgb(255 255 255 / 0.15);
+  --project-modal-media-bg: #050814;
+
+  --project-modal-title: #ffffff;
+  --project-modal-text: #cbd5e1;
+
+  --project-modal-panel-bg: rgb(255 255 255 / 0.055);
+  --project-modal-panel-border: rgb(255 255 255 / 0.1);
+
+  --project-modal-control-bg: rgb(5 8 20 / 0.9);
+  --project-modal-control-border: rgb(255 255 255 / 0.15);
+  --project-modal-control-text: #ffffff;
+
+  --project-modal-chip-bg: rgb(255 255 255 / 0.05);
+  --project-modal-chip-border: rgb(255 255 255 / 0.1);
+
+  --project-modal-shadow:
+    0 40px 160px rgb(0 0 0 / 0.75), 0 0 0 1px rgb(255 255 255 / 0.04);
+
+  --project-modal-panel-shadow: 0 20px 60px rgb(0 0 0 / 0.28);
 }
 
 html {
@@ -140,23 +261,17 @@ a {
 }
 
 .hero-gradient {
-  background: linear-gradient(
-    135deg,
-    transparent 0%,
-    transparent 52%,
-    rgba(244, 180, 0, 0.72) 52%,
-    rgba(138, 100, 0, 0.9) 100%
-  );
+  background: var(--hero-gradient);
 }
 
 @media (max-width: 768px) {
   .hero-gradient {
     background: linear-gradient(
       135deg,
-      transparent 0%,
-      transparent 65%,
-      rgba(244, 180, 0, 0.72) 65%,
-      rgba(138, 100, 0, 0.9) 100%
+      var(--section-bg-hero-left) 0%,
+      var(--section-bg-hero-left) 65%,
+      var(--section-bg-hero-right) 65%,
+      var(--section-bg-hero-right) 100%
     );
   }
 }
@@ -269,6 +384,23 @@ a {
   border-color: var(--color-primary);
   color: var(--color-primary);
   transform: translateY(-2px);
+}
+
+.featured-project-image-overlay {
+  background: linear-gradient(
+    to top,
+    var(--featured-project-gradient-strong),
+    rgb(255 255 255 / 0) 70%
+  );
+}
+
+.featured-project-content-overlay {
+  background: linear-gradient(
+    to top,
+    var(--featured-project-gradient-strong) 0%,
+    var(--featured-project-gradient-mid) 52%,
+    transparent 100%
+  );
 }
 
 /* BELOW FOR SECTIONHeadings */
