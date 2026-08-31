@@ -6,7 +6,7 @@
 
 import {
   FaGithub,
-  FaGooglePlay,
+  // FaGooglePlay,
   FaInstagram,
   FaLinkedin,
 } from "react-icons/fa";
@@ -23,7 +23,7 @@ const iconMap: Record<SocialLinkType["platform"], IconType> = {
   linkedin: FaLinkedin,
   github: FaGithub,
   instagram: FaInstagram,
-  playStore: FaGooglePlay,
+  // playStore: FaGooglePlay,
   email: MdEmail,
 };
 

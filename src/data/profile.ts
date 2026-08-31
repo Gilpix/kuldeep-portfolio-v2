@@ -35,11 +35,11 @@ export const profile: Profile = {
       label: "Instagram",
       url: "https://www.instagram.com/kulartist/",
     },
-    {
-      platform: "playStore",
-      label: "Google Play",
-      url: "https://play.google.com/store/apps/developer?id=Gilpix",
-    },
+    // {
+    //   platform: "playStore",
+    //   label: "Google Play",
+    //   url: "https://play.google.com/store/apps/developer?id=Gilpix",
+    // },
     {
       platform: "email",
       label: "Email",
