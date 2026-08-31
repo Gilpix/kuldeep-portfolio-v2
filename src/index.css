@@ -129,6 +129,29 @@ canvas {
   --featured-project-gradient-mid: rgb(255 255 255 / 0.9);
 
   --featured-project-shadow: 0 24px 70px rgb(15 23 42 / 0.12);
+
+  /* Project modal */
+  --project-modal-backdrop: rgb(15 23 42 / 0.45);
+
+  --project-modal-bg: #ffffff;
+  --project-modal-border: #dbe2ea;
+  --project-modal-media-bg: #ffffff;
+
+  --project-modal-title: #0f172a;
+  --project-modal-text: #475569;
+
+  --project-modal-panel-bg: #ffffff;
+  --project-modal-panel-border: #e2e8f0;
+
+  --project-modal-control-bg: #ffffff;
+  --project-modal-control-border: #cbd5e1;
+  --project-modal-control-text: #0f172a;
+
+  --project-modal-chip-bg: #f8fafc;
+  --project-modal-chip-border: #dbe2ea;
+
+  --project-modal-shadow: 0 40px 140px rgb(15 23 42 / 0.22);
+  --project-modal-panel-shadow: 0 16px 45px rgb(15 23 42 / 0.08);
 }
 
 .dark {
@@ -190,6 +213,31 @@ canvas {
   --featured-project-gradient-mid: rgb(5 8 20 / 0.88);
 
   --featured-project-shadow: 0 30px 100px rgb(0 0 0 / 0.35);
+
+  /* Project modal */
+  --project-modal-backdrop: rgb(0 0 0 / 0.8);
+
+  --project-modal-bg: #070b18;
+  --project-modal-border: rgb(255 255 255 / 0.15);
+  --project-modal-media-bg: #050814;
+
+  --project-modal-title: #ffffff;
+  --project-modal-text: #cbd5e1;
+
+  --project-modal-panel-bg: rgb(255 255 255 / 0.055);
+  --project-modal-panel-border: rgb(255 255 255 / 0.1);
+
+  --project-modal-control-bg: rgb(5 8 20 / 0.9);
+  --project-modal-control-border: rgb(255 255 255 / 0.15);
+  --project-modal-control-text: #ffffff;
+
+  --project-modal-chip-bg: rgb(255 255 255 / 0.05);
+  --project-modal-chip-border: rgb(255 255 255 / 0.1);
+
+  --project-modal-shadow:
+    0 40px 160px rgb(0 0 0 / 0.75), 0 0 0 1px rgb(255 255 255 / 0.04);
+
+  --project-modal-panel-shadow: 0 20px 60px rgb(0 0 0 / 0.28);
 }
 
 html {
