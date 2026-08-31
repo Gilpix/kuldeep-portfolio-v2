@@ -18,6 +18,7 @@ import tekhubWebsite from "./tekhub-website.webp";
 import todolist from "./todolist.webp";
 import travelMobile from "./travel-mobile.webp";
 import yelpcamp from "./yelpcamp.webp";
+import myPortfolio from "./my-portfolio.webp";
 
 export const projectImages = {
   topParentCms,
@@ -39,4 +40,5 @@ export const projectImages = {
   todolist,
   travelMobile,
   yelpcamp,
+  myPortfolio,
 };

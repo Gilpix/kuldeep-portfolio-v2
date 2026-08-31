@@ -8,6 +8,8 @@ import { projectImages } from "../assets/images/projects";
 
 export type ProjectCategory = "web" | "mobile" | "design" | "other";
 
+export type ArchiveCategory = "web" | "mobile" | "learning";
+
 export interface ProjectLink {
   label: string;
   url: string;
@@ -19,6 +21,7 @@ export interface Project {
   title: string;
   subtitle: string;
   category: ProjectCategory;
+  archiveCategory?: ArchiveCategory;
   badge?: string;
   metrics?: { value: string; label: string }[];
   featured: boolean;
@@ -219,43 +222,77 @@ export const projects: Project[] = [
       "Docker",
     ],
     links: [
-      {
-        label: "Visit Website",
-        url: "https://www.piknix.com",
-        type: "live",
-      },
+      // {
+      //   label: "Visit Website",
+      //   url: "https://www.piknix.com",
+      //   type: "live",
+      // },
     ],
   },
   {
-    id: "reactmania",
-    title: "ReactMania",
-    subtitle: "Collection of React mini projects",
+    id: "yelpcamp",
+    title: "Yelp Camp",
+    subtitle: "Campground listing web application",
     category: "web",
-    featured: true,
-    image: projectImages.reactMania,
-    images: [projectImages.reactMania],
-    role: "Frontend Developer",
+    archiveCategory: "web",
+    featured: false,
+    image: projectImages.yelpcamp,
+    images: [projectImages.yelpcamp],
+    role: "Full Stack Developer",
     overview:
-      "A responsive React application containing multiple small to medium projects built with React hooks and Bootstrap.",
+      "A responsive web application for listing, viewing, and managing campground information.",
     highlights: [
-      "Created reusable React components.",
-      "Used React hooks for state and interaction handling.",
-      "Built responsive layouts with Bootstrap.",
+      "Implemented authentication and authorization with Passport.",
+      "Built RESTful routes for campground and comment management.",
+      "Used MongoDB and Mongoose for data storage.",
     ],
-    technologies: ["React", "JavaScript", "React Hooks", "Bootstrap", "CSS"],
+    technologies: ["Node.js", "Express", "MongoDB", "Mongoose", "Passport"],
     links: [
       {
-        label: "View Demo",
-        url: "https://optimistic-wing-69cbaa.netlify.app/",
-        type: "live",
-      },
-      {
         label: "View Code",
-        url: "https://github.com/Gilpix/ReactMania",
+        url: "https://github.com/Gilpix/YelpCamp",
         type: "code",
       },
     ],
   },
+  {
+    id: "my-portfolio",
+    title: "Developer Portfolio",
+    subtitle: "Modern developer portfolio built with React and TypeScript",
+    category: "web",
+    archiveCategory: "web",
+    featured: false,
+    image: projectImages.myPortfolio,
+    images: [projectImages.myPortfolio],
+    role: "Frontend Developer",
+    overview:
+      "A modern personal portfolio designed and developed to present my experience, projects, technical skills, and professional journey through a polished, responsive web experience.",
+    highlights: [
+      "Built a responsive portfolio experience with reusable React and TypeScript components.",
+      "Created interactive sections with responsive layouts, theme support, scroll-based animations, and mobile-specific interactions.",
+      "Designed reusable UI patterns for experience, projects, skills, and other portfolio content with a focus on maintainability and consistent UX.",
+    ],
+    technologies: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "Framer Motion",
+    ],
+    links: [
+      {
+        label: "View Demo",
+        url: "https://kulsinggh.vercel.app/",
+        type: "live",
+      },
+      {
+        label: "View Code",
+        url: "https://github.com/Gilpix/kuldeep-portfolio-v2",
+        type: "code",
+      },
+    ],
+  },
+
   {
     id: "sani-amigo",
     title: "Sani Amigo",
@@ -291,60 +328,11 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "yelpcamp",
-    title: "Yelp Camp",
-    subtitle: "Campground listing web application",
-    category: "web",
-    featured: false,
-    image: projectImages.yelpcamp,
-    images: [projectImages.yelpcamp],
-    role: "Full Stack Developer",
-    overview:
-      "A responsive web application for listing, viewing, and managing campground information.",
-    highlights: [
-      "Implemented authentication and authorization with Passport.",
-      "Built RESTful routes for campground and comment management.",
-      "Used MongoDB and Mongoose for data storage.",
-    ],
-    technologies: ["Node.js", "Express", "MongoDB", "Mongoose", "Passport"],
-    links: [
-      {
-        label: "View Code",
-        url: "https://github.com/Gilpix/YelpCamp",
-        type: "code",
-      },
-    ],
-  },
-  {
-    id: "search-engine",
-    title: "Search Engine",
-    subtitle: "Full stack persistent text search app",
-    category: "web",
-    featured: false,
-    image: projectImages.searchEngine,
-    images: [projectImages.searchEngine],
-    role: "Full Stack Developer",
-    overview:
-      "A full-stack React and Node.js application that provides persistent search functionality across uploaded text files.",
-    highlights: [
-      "Built React frontend and Node.js backend.",
-      "Created REST APIs for returning search results.",
-      "Handled text file search logic and persistent data flow.",
-    ],
-    technologies: ["React", "Node.js", "Express", "REST API", "Bootstrap"],
-    links: [
-      {
-        label: "View Code",
-        url: "https://github.com/Gilpix/FullStackWebDeveloperChallenge",
-        type: "code",
-      },
-    ],
-  },
-  {
     id: "restful-blog",
     title: "RESTful Blog",
     subtitle: "CRUD blog using RESTful routes",
     category: "web",
+    archiveCategory: "web",
     featured: false,
     image: projectImages.restfulBlog,
     images: [projectImages.restfulBlog],
@@ -372,31 +360,58 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "my-portfolio",
-    title: "My Portfolio",
-    subtitle: "Original Kuldeep Singh portfolio website",
+    id: "reactmania",
+    title: "ReactMania",
+    subtitle: "Collection of React mini projects",
     category: "web",
-    featured: false,
-    image: "myportfolio.png",
-    images: ["myportfolio.png"],
+    archiveCategory: "web",
+    featured: true,
+    image: projectImages.reactMania,
+    images: [projectImages.reactMania],
     role: "Frontend Developer",
     overview:
-      "The original portfolio website built with HTML, CSS, JavaScript, Bootstrap, and jQuery.",
+      "A responsive React application containing multiple small to medium projects built with React hooks and Bootstrap.",
     highlights: [
-      "Designed a single-page portfolio experience.",
-      "Added project filtering, modal details, and scroll animations.",
-      "Used Bootstrap, jQuery, AOS, and Typed.js.",
+      "Created reusable React components.",
+      "Used React hooks for state and interaction handling.",
+      "Built responsive layouts with Bootstrap.",
     ],
-    technologies: ["HTML", "CSS", "JavaScript", "jQuery", "Bootstrap"],
+    technologies: ["React", "JavaScript", "React Hooks", "Bootstrap", "CSS"],
     links: [
       {
         label: "View Demo",
-        url: "https://gilpix.github.io/My-Portfolio/",
+        url: "https://optimistic-wing-69cbaa.netlify.app/",
         type: "live",
       },
       {
         label: "View Code",
-        url: "https://github.com/Gilpix/My-Portfolio",
+        url: "https://github.com/Gilpix/ReactMania",
+        type: "code",
+      },
+    ],
+  },
+  {
+    id: "search-engine",
+    title: "Search Engine",
+    subtitle: "Full stack persistent text search app",
+    category: "web",
+    archiveCategory: "learning",
+    featured: false,
+    image: projectImages.searchEngine,
+    images: [projectImages.searchEngine],
+    role: "Full Stack Developer",
+    overview:
+      "A full-stack React and Node.js application that provides persistent search functionality across uploaded text files.",
+    highlights: [
+      "Built React frontend and Node.js backend.",
+      "Created REST APIs for returning search results.",
+      "Handled text file search logic and persistent data flow.",
+    ],
+    technologies: ["React", "Node.js", "Express", "REST API", "Bootstrap"],
+    links: [
+      {
+        label: "View Code",
+        url: "https://github.com/Gilpix/FullStackWebDeveloperChallenge",
         type: "code",
       },
     ],
@@ -406,6 +421,7 @@ export const projects: Project[] = [
     title: "TekHub Web",
     subtitle: "Product lending system frontend",
     category: "web",
+    archiveCategory: "learning",
     featured: true,
     image: projectImages.tekhubWebsite,
     images: [projectImages.tekhubWebsite],
@@ -436,6 +452,7 @@ export const projects: Project[] = [
     title: "TekHub Android",
     subtitle: "Android lending application",
     category: "mobile",
+    archiveCategory: "mobile",
     featured: true,
     image: projectImages.tekhubMobile,
     images: [projectImages.tekhubMobile],
@@ -476,6 +493,7 @@ export const projects: Project[] = [
     title: "Food Buddy",
     subtitle: "Android restaurant partner app",
     category: "mobile",
+    archiveCategory: "mobile",
     featured: false,
     image: projectImages.foodBuddyMobile,
     images: [projectImages.foodBuddyMobile],
@@ -501,39 +519,41 @@ export const projects: Project[] = [
       },
     ],
   },
-  {
-    id: "car-market",
-    title: "Car Market",
-    subtitle: "Car selling website frontend",
-    category: "web",
-    featured: false,
-    image: "carmarket.png",
-    images: ["carmarket.png"],
-    role: "Frontend Developer",
-    overview: "A static frontend design for a car selling web application.",
-    highlights: [
-      "Designed home, contact, sign-in, sign-up, and car display pages.",
-      "Built the interface with HTML and CSS.",
-    ],
-    technologies: ["HTML", "CSS"],
-    links: [
-      {
-        label: "View Demo",
-        url: "https://gilpix.github.io/CarMarket/index.html",
-        type: "live",
-      },
-      {
-        label: "View Code",
-        url: "https://github.com/Gilpix/CarMarket",
-        type: "code",
-      },
-    ],
-  },
+  // {
+  //   id: "car-market",
+  //   title: "Car Market",
+  //   subtitle: "Car selling website frontend",
+  //   category: "web",
+  //   archiveCategory: "learning",
+  //   featured: false,
+  //   image: "carmarket.png",
+  //   images: ["carmarket.png"],
+  //   role: "Frontend Developer",
+  //   overview: "A static frontend design for a car selling web application.",
+  //   highlights: [
+  //     "Designed home, contact, sign-in, sign-up, and car display pages.",
+  //     "Built the interface with HTML and CSS.",
+  //   ],
+  //   technologies: ["HTML", "CSS"],
+  //   links: [
+  //     {
+  //       label: "View Demo",
+  //       url: "https://gilpix.github.io/CarMarket/index.html",
+  //       type: "live",
+  //     },
+  //     {
+  //       label: "View Code",
+  //       url: "https://github.com/Gilpix/CarMarket",
+  //       type: "code",
+  //     },
+  //   ],
+  // },
   {
     id: "traffic-road-sign",
     title: "Traffic Road Sign Canada",
     subtitle: "Android driving test preparation app",
     category: "mobile",
+    archiveCategory: "mobile",
     featured: true,
     image: projectImages.trafficCanadaMobile,
     images: [projectImages.trafficCanadaMobile],
@@ -564,6 +584,7 @@ export const projects: Project[] = [
     title: "Color Guessing Game",
     subtitle: "RGB color guessing web game",
     category: "web",
+    archiveCategory: "learning",
     featured: false,
     image: projectImages.colorguess,
     images: [projectImages.colorguess],
@@ -594,6 +615,7 @@ export const projects: Project[] = [
     title: "To Do List",
     subtitle: "jQuery task list app",
     category: "web",
+    archiveCategory: "learning",
     featured: false,
     image: projectImages.todolist,
     images: [projectImages.todolist],
@@ -624,6 +646,7 @@ export const projects: Project[] = [
     title: "Travel With Us",
     subtitle: "Android bus booking prototype",
     category: "design",
+    archiveCategory: "learning",
     featured: false,
     image: projectImages.travelMobile,
     images: [projectImages.travelMobile],
@@ -649,6 +672,7 @@ export const projects: Project[] = [
     title: "Share Expenses",
     subtitle: "Expense splitting app prototype",
     category: "design",
+    archiveCategory: "learning",
     featured: false,
     image: projectImages.shareExpenses,
     images: [projectImages.shareExpenses],
@@ -679,6 +703,7 @@ export const projects: Project[] = [
     title: "Pro Quiz",
     subtitle: "Android quiz game",
     category: "mobile",
+    archiveCategory: "mobile",
     featured: false,
     image: projectImages.proQuizMobile,
     images: [projectImages.proQuizMobile],

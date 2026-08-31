@@ -134,7 +134,7 @@ function About() {
                   <p className="text-3xl font-black text-[var(--color-primary)] transition duration-300">
                     {stat.value}
                   </p>
-                  <p className="mt-2 text-sm leading-6 text-[var(--color-text-soft)] transition duration-300 group-hover:text-[var(--color-text)] group-active:text-[var(--color-text)]">
+                  <p className="mt-2 text-sm leading-6 text-[var(--color-text-soft)] transition duration-300 group-hover:text-[var(--color-light)] group-active:text-[var(--color-text)]">
                     {stat.label}
                   </p>
                 </motion.div>
