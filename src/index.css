@@ -110,6 +110,9 @@ canvas {
   /* Effects */
   --shadow-card: 0 24px 80px rgb(15 23 42 / 0.08);
   --shadow-card-strong: 0 30px 100px rgb(15 23 42 / 0.14);
+
+  /* Experience theme */
+  --experience-timeline-line: #cbd5e1;
 }
 
 .dark {
@@ -152,6 +155,9 @@ canvas {
 
   --shadow-card: 0 24px 80px rgb(0 0 0 / 0.24);
   --shadow-card-strong: 0 30px 110px rgb(0 0 0 / 0.36);
+
+  /* Experience */
+  --experience-timeline-line: rgb(255 255 255 / 0.1);
 }
 
 html {

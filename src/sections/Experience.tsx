@@ -13,6 +13,7 @@ import SectionHeading from "../components/common/SectionHeading";
 import SectionWrapper from "../components/layout/SectionWrapper";
 import { experiences } from "../data/experience";
 import { fadeUp, staggerContainer, viewportOnce } from "../utils/animations";
+import resumePdf from "../assets/resume/Kuldeep-Singh-Resume.pdf";
 
 function getCompanyName(company: string) {
   return company === "BRILCS" ? "BRIL Consultancy Services" : company;
@@ -175,7 +176,7 @@ function Experience() {
         </aside>
 
         <div className="relative">
-          <div className="absolute left-6 top-0 h-full w-px overflow-hidden bg-[var(--color-card-border)]">
+          <div className="absolute left-6 top-0 h-full w-px overflow-hidden bg-[var(--experience-timeline-line)]">
             {[0, 1, 2].map((item) => (
               <motion.div
                 key={item}
@@ -319,7 +320,7 @@ function Experience() {
                 </p>
 
                 <a
-                  href="/resume/Kuldeep-Singh-Resume.pdf"
+                  href={resumePdf}
                   target="_blank"
                   rel="noreferrer"
                   className="mt-4 inline-flex text-sm font-black text-[var(--color-primary)] transition hover:translate-x-1"
@@ -443,7 +444,7 @@ function Experience() {
           </p>
 
           <a
-            href="/resume/Kuldeep-Singh-Resume.pdf"
+            href={resumePdf}
             target="_blank"
             rel="noreferrer"
             className="mt-4 inline-flex text-sm font-black text-[var(--color-primary)]"
